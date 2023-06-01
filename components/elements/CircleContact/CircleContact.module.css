@@ -1,0 +1,28 @@
+.button {
+    right: 80px;
+    bottom: 80px;
+    z-index: 20;
+    position: fixed;
+    border-radius: 50%;
+    backdrop-filter: blur(1px);
+    background: rgba(var(--primary-rgb), .2);
+}
+
+.icon {
+    fill: rgb(var(--gray-rgb));
+    transition: fill .2s ease-in-out;
+    animation: 7s linear infinite both IconRotate;
+}
+
+.button:hover .icon {
+    fill: rgb(var(--red-rgb));
+}
+
+@keyframes IconRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

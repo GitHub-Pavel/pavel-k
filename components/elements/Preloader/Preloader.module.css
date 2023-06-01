@@ -1,0 +1,38 @@
+.preloader {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    background: rgb(var(--dark-rgb));
+    display: grid;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+:global(.loading) .preloader {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.icon {
+    width: 100%;
+    max-width: 500px;
+    place-self: center;
+}
+
+.icon path:last-child {
+    animation: DotDisapiring .8s linear infinite alternate;
+}
+
+@keyframes DotDisapiring {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

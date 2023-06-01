@@ -1,0 +1,31 @@
+.button {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+}
+
+.icon {
+    fill: rgb(var(--gray-rgb));
+    transition: fill .2s ease-in-out;
+    animation: 4s ease-in-out infinite both IconDrop;
+}
+
+.button:hover .icon {
+    fill: rgb(var(--red-rgb));
+}
+
+@keyframes IconDrop {
+    0% {
+        transform: translateY(0px);
+    }
+    80% {
+        transform: translateY(0px);
+    }
+    90% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

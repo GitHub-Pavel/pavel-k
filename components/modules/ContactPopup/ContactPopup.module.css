@@ -1,0 +1,5 @@
+.wrap {
+    display: grid;
+    gap: var(--column-gap);
+    grid-template-columns: 320px 220px;
+}

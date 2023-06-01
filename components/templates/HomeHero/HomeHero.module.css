@@ -1,0 +1,21 @@
+.title {
+    width: min-content;
+    padding-top: 12.4vh;
+    color: rgb(var(--red-rgb));
+}
+
+.title > span > span {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.img {
+    position: absolute;
+    top: 25vh;
+    z-index: -1;
+}
+
+.wrap {
+    display: flex;
+    justify-content: flex-end;
+}

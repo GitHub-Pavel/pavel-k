@@ -1,0 +1,66 @@
+.header {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 30;
+    color: #FFFFFF;
+    position: fixed;
+    padding-top: 6vh;
+    transition: .08s ease-in-out;
+}
+
+:global(.scroll-no-top) .header {
+    padding: 2vh 0;
+    backdrop-filter: blur(8px);
+    background: rgba(var(--primary-rgb), 0.7);
+    transition: .3s ease-in-out;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 8fr 3fr 1fr;
+    align-items: center;
+}
+
+.logotype__icon {
+    transition: fill .2s ease-in-out;
+    fill: #FFFFFF;
+    width: 78px;
+}
+
+.logotype:hover .logotype__icon {
+    fill: rgb(var(--red-rgb));
+}
+
+.button {
+    transition: color .2s ease-in-out;
+}
+
+.button:hover {
+    color: rgb(var(--red-rgb));
+}
+
+.hamb {
+    height: 35px;
+    padding: 4px;
+    margin-right: -14px;
+    align-items: center;
+    display: inline-flex;
+    outline: none;
+}
+
+.hamb__icon {
+    width: 40px;
+    stroke: #FFFFFF;
+    stroke-dasharray: 30px 64px;
+    stroke-dashoffset: 0px;
+    transition: stroke .2s ease-in-out, stroke-dashoffset .3s ease-in-out;
+}
+
+.hambActive .hamb__icon {
+    stroke-dashoffset: var(--active-hamb-length);
+}
+
+.hamb:hover .hamb__icon {
+    stroke: rgb(var(--red-rgb));
+}

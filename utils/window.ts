@@ -1,0 +1,1 @@
+export const getWindowProp = (propName: keyof Window) => typeof window !== "undefined" && window[propName];
