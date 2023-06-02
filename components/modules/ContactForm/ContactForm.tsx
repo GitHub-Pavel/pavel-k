@@ -1,13 +1,14 @@
 'use client';
 
+import axios from "axios";
 import * as yup from "yup";
 import classNames from "classnames";
 import { FC, useState } from "react";
+import { useNotifiction } from "@hooks";
 import { useForm } from "react-hook-form";
 import css from "./ContactForm.module.css";
 import { Button, Input, Textarea } from "@components";
 import { yupResolver } from "@hookform/resolvers/yup";
-import axios from "axios";
 
 
 type ContactFormProps = {
@@ -25,6 +26,7 @@ export type FormProps = yup.InferType<typeof schema>;
 export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
     const [loading, setLoading] = useState(false);
     const [apiError, setError] = useState<string | null>(null);
+    const openSuccess = useNotifiction("contact-form");
 
     const { register, handleSubmit, reset, formState:{ errors } } = useForm<FormProps>({
         resolver: yupResolver(schema)
@@ -34,6 +36,7 @@ export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
             setLoading(true);
             await axios.post('/api/sendMail', data);
             setLoading(false);
+            openSuccess();
             reset();
         } catch (error: any) {
             setError(error.message);

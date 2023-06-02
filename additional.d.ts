@@ -42,3 +42,9 @@ declare module '*.ico' {
 
 declare module '*.svg';
 declare module "*.module.css";
+
+declare namespace JSX {
+    interface IntrinsicElements {
+      "lottie-player": any;
+    }
+}

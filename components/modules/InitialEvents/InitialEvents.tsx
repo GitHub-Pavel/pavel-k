@@ -1,7 +1,7 @@
 'use client';
 
 import { commonActions } from "@store";
-import { ContactPopup, MainMenu } from "@components";
+import { ContactPopup, MainMenu, Notifications } from "@components";
 import { useAppDispatch, useAppSelector } from "@hooks";
 import { usePathname, useSearchParams } from "next/navigation";
 import { FC, Fragment, useEffect, useLayoutEffect } from "react";
@@ -50,6 +50,7 @@ export const InitialEvents: FC = () => {
         <Fragment>
             <MainMenu />
             <ContactPopup />
+            <Notifications />
         </Fragment>
     );
 };

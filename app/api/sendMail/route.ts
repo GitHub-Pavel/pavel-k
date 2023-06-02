@@ -1,15 +1,15 @@
 import sendgridMail from "@sendgrid/mail";
 import { NextResponse } from "next/server";
-import { FormProps } from "../../../components/templates/ContactForm/ContactForm";
+import { FormProps } from "../../../components/modules/ContactForm/ContactForm";
 
 export async function POST(request: Request) {
     try {
         const data: Record<keyof FormProps, string | undefined> = await request.json();
         const hasMessage = data.message !== undefined && data.message !== "";
 
-        const email = data.email !== undefined && `email: ${data.email}`;
-        const name = data.name !== undefined && `name: ${data.name}`;
-        const message = hasMessage ? `message: ${data.message}` : '';
+        const email = data.email !== undefined && `Email: ${data.email}`;
+        const name = data.name !== undefined && `Name: ${data.name}`;
+        const message = hasMessage ? `Message: ${data.message}` : '';
 
         if (!email || !name) {
             const errorMessages: string[] = [];
