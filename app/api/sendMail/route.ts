@@ -11,14 +11,10 @@ export async function POST(request: Request) {
         const name = data.name !== undefined && `Name: ${data.name}`;
         const message = hasMessage ? `Message: ${data.message}` : '';
 
-        if (!email || !name) {
-            const errorMessages: string[] = [];
-
-            if (!email) errorMessages.push("Email field missing"); 
-            if (!name) errorMessages.push("Name field missing"); 
-
-            return NextResponse.json({message: errorMessages}, {status: 403});
-        }
+        if (!email) 
+            return NextResponse.json({message: "Email field missing"}, {status: 403}); 
+        if (!name) 
+            return NextResponse.json({message: "Name field missing"}, {status: 403}); 
 
         const msg = {
             to: process.env.EMAIL_ADDRESS as string,
