@@ -1,26 +1,23 @@
 import { commonActions, Notifications } from "@store";
-import { useAppDispatch, useAppSelector } from "@hooks";
 import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useState, useEffect } from "react";
+import { useAppDispatch, useAppSelector, useEmitter } from "@hooks";
 
 
 export const useNotifiction = (name: Notifications) => {
     const router = useRouter();
+    const emitter = useEmitter();
     const pathname = usePathname();
     const dispatch = useAppDispatch();
-    const [isOpen, setOpen] = useState(false);
     const popup = useAppSelector(store => store.common.currentPopup);
 
-    useEffect(() => {
-        if (isOpen && !popup) {
-            dispatch(commonActions.setNotification(name));
-            setOpen(false);
-        }
-    }, [popup]);
+    const notificationHandler = () => {
+        dispatch(commonActions.setNotification(name));
+        emitter.off('popup/close', notificationHandler);
+    }
 
     return () => {
         if (popup) {
-            setOpen(true);
+            emitter.on('popup/close', notificationHandler);
             return router.push(pathname);
         }
 
