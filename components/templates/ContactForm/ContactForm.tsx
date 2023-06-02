@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import css from "./ContactForm.module.css";
 import { Button, Input, Textarea } from "@components";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
 
 
 type ContactFormProps = {
@@ -19,7 +20,7 @@ const schema = yup.object({
     message: yup.string(),
 }).required();
 
-type FormProps = yup.InferType<typeof schema>;
+export type FormProps = yup.InferType<typeof schema>;
 
 export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
     const [loading, setLoading] = useState(false);
@@ -28,13 +29,16 @@ export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
     const { register, handleSubmit, reset, formState:{ errors } } = useForm<FormProps>({
         resolver: yupResolver(schema)
     });
-    const onSubmit = (data: FormProps) => {
-        setLoading(true);
-        setTimeout(() => {
-            console.log(data);
+    const onSubmit = async (data: FormProps) => {
+        try {
+            setLoading(true);
+            await axios.post('/api/sendMail', data);
             setLoading(false);
             reset();
-        }, 1000);
+        } catch (error: any) {
+            setError(error.message);
+            setLoading(false);
+        }
     };
 
     const formErrors = Boolean(errors.name || errors.email);
