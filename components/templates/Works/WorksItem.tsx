@@ -61,8 +61,8 @@ export const WorksItem: FC<WorkProps> = ({
                 <SkeletonImage 
                     alt={title}
                     src={image}
-                    width={628}
-                    height={1114}
+                    width={1114}
+                    height={628}
                     className={css.img}
                 />
                 <div className={css.content}>

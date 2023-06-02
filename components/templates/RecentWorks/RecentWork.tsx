@@ -94,8 +94,8 @@ export const RecentWork: FC<RecentWorkProps> = ({
                     <SkeletonImage 
                         alt={title}
                         src={image}
-                        width={668}
-                        height={1114}
+                        width={1114}
+                        height={628}
                         className={css.image}
                     />
                     <div className={css.content}>
