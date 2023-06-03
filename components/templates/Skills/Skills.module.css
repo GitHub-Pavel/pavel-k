@@ -97,3 +97,17 @@
     padding: 0 20px;
     margin-bottom: 20px;
 }
+
+@media (max-width: 1155px) {
+    .item {
+        grid-template-columns: 5fr 1.5fr 5fr;
+    }
+
+    .itemTitle {
+        padding: 0 15px;
+    }
+
+    .itemText {
+        padding: 0 20px;
+    }
+}

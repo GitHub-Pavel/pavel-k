@@ -18,7 +18,7 @@ export const About: FC<AboutProps> = ({page}) => {
                     <AboutImage />
                     <div className={css.content}>
                         <p className={css.text}>I have been doing web development for <span className="text-red">over 3 years</span>. During this time, I managed to work both on large projects and on small, but no less interesting ones. I always try to be in touch so that we can resolve issues as quickly as possible!</p>
-                        <div>
+                        <div className="overflow-hidden">
                             <p className={css.social}>Socials</p>
                             <SocialList />
                         </div>

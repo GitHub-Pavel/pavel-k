@@ -95,3 +95,19 @@ h4,.h4 {
 .link-small:hover {
   color: rgb(var(--red-rgb));
 }
+
+@media (max-width: 1480px) {
+  h2, .h2 {
+    font-size: 3.75rem;
+  }
+}
+
+@media (max-width: 1155px) {
+  h2, .h2 {
+    font-size: 3.25rem;
+  }
+
+  .section {
+    padding: 6.5vh 0;
+  }
+}
