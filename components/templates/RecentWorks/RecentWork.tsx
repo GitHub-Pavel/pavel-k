@@ -70,8 +70,8 @@ export const RecentWork: FC<RecentWorkProps> = ({
         work.style.opacity = opacity.toString();
 
         setTimeout(() => {
-            if (currentPercent > 40 && currentPercent < 70) setVisibleHead(() => true);
-            if (currentPercent > 70 && currentPercent < 100) setVisibleHead(() => false);
+            if (currentPercent > 40 && currentPercent < 80) setVisibleHead(() => true);
+            if (currentPercent > 80 && currentPercent < 100) setVisibleHead(() => false);
             if (currentPercent < 40) setVisibleHead(() => false);
         }, 0);
     };
@@ -101,7 +101,7 @@ export const RecentWork: FC<RecentWorkProps> = ({
                     <div className={css.content}>
                         <motion.h3 
                             initial="hidden"
-                            className="h2 mb-5"
+                            className="h2 xl:mb-5 md:mb-3"
                             animate={animationType}
                             variants={titleAnimation}
                         >{title}</motion.h3>

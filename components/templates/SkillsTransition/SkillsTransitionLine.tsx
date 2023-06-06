@@ -39,7 +39,9 @@ export const SkillsTransitionLine: FC = () => {
                     maxHeight={maxHeight}
                 />
             )}
-            <ArrowDown />
+            <ArrowDown 
+                className={css.arrow}
+            />
         </div>
     );
 };
@@ -53,9 +55,9 @@ const MotionLine: FC<{
 }) => {
     const { scrollYProgress } = useScroll({
         target,
-        offset: ["center start", "2 2"]
+        offset: ["start center", "end center"]
     });
-    const height = useTransform(scrollYProgress, [1, 0], [0, maxHeight]);
+    const height = useTransform(scrollYProgress, [0, 1], [0, maxHeight]);
 
     return (
         <motion.div 

@@ -58,3 +58,21 @@
     margin-bottom: 32vh;
     min-height: 100vh;
 }
+
+@media (max-width: 1155px) {
+    .workWrap {
+        height: calc(100vh - ( 160px + 100px ));
+    }   
+    .work {
+        padding-bottom: 60px;
+    } 
+    .content {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 540px) {
+    .workWrap {
+        height: calc(100vh - ( 180px + 100px ));
+    }
+}

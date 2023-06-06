@@ -47,6 +47,10 @@ export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
     const formErrors = Boolean(errors.name || errors.email);
     const wrapClasses = classNames({[css.wrap]: withMessage});
     const btnClasses = classNames({"flex justify-center": withMessage});
+    const lastInputClasses = classNames({
+        "mb-9": !withMessage,
+        "mb-4 sm:mb-9": withMessage
+    });
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -61,9 +65,9 @@ export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
                     />
                     <Input
                         type="email"
-                        className="mb-9"
                         placeholder="Email*"
                         {...register("email")}
+                        className={lastInputClasses}
                         error={errors.email?.message}
                     />
                 </div>

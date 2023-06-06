@@ -45,8 +45,8 @@ export const RecentWorks: FC<RecentWorksProps> = ({speed = 1}) => {
 
     return (
         <motion.section className="section" style={{ pointerEvents }}>
+            <MotionRecentWorksTitle style={{ opacity }} />
             <div className="container">
-                <MotionRecentWorksTitle style={{ opacity }} />
                 <div 
                     ref={worksCanvas} 
                     style={wrapStyles}

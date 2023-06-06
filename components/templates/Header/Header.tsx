@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import css from './Header.module.css';
 import { motion } from 'framer-motion';
-import { useAppSelector } from '@hooks';
+import { useAppSelector, useWindow } from '@hooks';
 import { HeaderLogo } from './HeaderLogo';
 import { HeaderContact } from './HeaderContact';
 import { HeaderHamburger } from './HeaderHamburger';
@@ -20,6 +20,7 @@ const headerAnimation = {
 }
 
 export const Header: FC = () => {
+    const [width] = useWindow();
     const isDocumentReady = useAppSelector(store => store.common.isDocumentReady);
     const animationType: keyof typeof headerAnimation = isDocumentReady ? "visible" : "hidden";
 
@@ -35,9 +36,11 @@ export const Header: FC = () => {
                     <div className="flex justify-start">
                         <HeaderLogo />
                     </div>
-                    <div>
-                        <HeaderContact />
-                    </div>
+                    {width > 600 && (
+                        <div>
+                            <HeaderContact />
+                        </div>
+                    )}
                     <div className="flex justify-end">
                         <HeaderHamburger />
                     </div>

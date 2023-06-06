@@ -75,3 +75,17 @@
     border-color: #0A66C2;
     box-shadow: 0 0 20px #0A66C2;
 }
+
+
+@media (max-width: 1155px) {
+    .list {
+        --list-gap: 20px;
+    }
+}
+
+@media (max-width: 984px) {
+    .list {
+        --icon-size: 20px;
+        --link-size: 45px;
+    }
+}

@@ -47,7 +47,7 @@ export const FooterMenu: FC = () => {
     return (
         <motion.ul 
             initial="hidden"
-            className="flex my-7"
+            className="flex my-7 md:my-5"
             variants={listAnimation}
             whileInView={animationType}
             transition={{

@@ -103,11 +103,46 @@ h4,.h4 {
 }
 
 @media (max-width: 1155px) {
+  :root {
+    --column-gap: 35px;
+  }
+
+  h1, .h1 {
+    font-size: 11rem;
+  }
+
   h2, .h2 {
     font-size: 3.25rem;
   }
 
+  h3,.h3 {
+    font-size: 2.75rem;
+  }
+
   .section {
     padding: 6.5vh 0;
+  }
+}
+
+@media (max-width: 984px) {
+  h2, .h2 {
+    font-size: 3rem;
+  }
+
+  h3,.h3 {
+    font-size: 2.5rem;
+    line-height: 1em;
+  }
+}
+
+@media (max-width: 730px) {
+  h1,.h1 {
+    font-size: 9rem;
+  }
+}
+
+@media (max-width: 540px) {
+  h1,.h1 {
+    font-size: 7rem; 
   }
 }

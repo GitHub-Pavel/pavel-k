@@ -6,6 +6,7 @@
 }
 
 .icon {
+    width: 25px;
     fill: rgb(var(--gray-rgb));
     transition: fill .2s ease-in-out;
     animation: 4s ease-in-out infinite both IconDrop;
@@ -27,5 +28,23 @@
     }
     100% {
         transform: translateY(0px);
+    }
+}
+
+@media (max-width: 1155px) {
+    .button {
+        bottom: 40px;
+    }
+}
+
+@media (max-width: 984px) {
+    .icon {
+        width: 22px;
+    }
+}
+
+@media (max-width: 730px) {
+    .button {
+        bottom: 35px;
     }
 }

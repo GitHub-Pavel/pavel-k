@@ -1,5 +1,6 @@
 'use client';
 
+import { useWindow } from "@hooks";
 import classNames from "classnames";
 import { FC, forwardRef } from "react";
 import { deleteProperty } from "@utils";
@@ -13,6 +14,7 @@ type InputProps = {
 
 
 export const Textarea: FC<InputProps> = forwardRef<HTMLLabelElement, InputProps>((props, ref) => {
+    const [width] = useWindow();
     const inputProps: Omit<InputProps, "className"> = {...props};
     const labelClasses = classNames(props.className, "flex flex-col");
     const inputClasses = classNames(
@@ -25,6 +27,7 @@ export const Textarea: FC<InputProps> = forwardRef<HTMLLabelElement, InputProps>
         <label ref={ref} className={labelClasses}>
             <textarea
                 className={inputClasses}
+                rows={width > 600 ? undefined : 7}
                 {...deleteProperty(inputProps, ["error", "className"])}
             />
             {props.error && (

@@ -26,20 +26,24 @@ export const CircleContact: FC = () => {
 
     return (
         <Portal>
-            <motion.button 
+            <motion.div
                 variants={circleAnimation}
                 animate={animationType}
-                className={css.button}
-                onClick={callPopup}
+                className={css.wrap}
                 transition={{
                     delay: 0.6,
                     duration: 0.5
                 }}
-                title="Contact me"
                 initial="hidden"
             >
-                <ContactCircle className={css.icon} />
-            </motion.button>
+                <button 
+                    className={css.button}
+                    onClick={callPopup}
+                    title="Contact me"
+                >
+                    <ContactCircle className={css.icon} />
+                </button>
+            </motion.div>
         </Portal>
     );
 }

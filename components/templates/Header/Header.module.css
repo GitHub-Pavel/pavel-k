@@ -41,16 +41,12 @@
 }
 
 .hamb {
-    height: 35px;
-    padding: 4px;
-    margin-right: -14px;
-    align-items: center;
-    display: inline-flex;
+    width: 30px;
     outline: none;
 }
 
 .hamb__icon {
-    width: 40px;
+    height: 42px;
     stroke: #FFFFFF;
     stroke-dasharray: 30px 64px;
     stroke-dashoffset: 0px;
@@ -63,4 +59,10 @@
 
 .hamb:hover .hamb__icon {
     stroke: rgb(var(--red-rgb));
+}
+
+@media (max-width: 600px) {
+    .row {
+        grid-template-columns: 8fr 4fr;
+    }
 }
