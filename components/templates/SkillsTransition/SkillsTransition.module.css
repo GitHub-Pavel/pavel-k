@@ -66,3 +66,13 @@
         grid-column: 1;
     }
 }
+
+@media (max-width: 600px) {
+    .arrow {
+        width: 50px;
+    }
+
+    .line {
+        width: 1px;
+    }
+}

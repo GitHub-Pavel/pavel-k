@@ -58,7 +58,7 @@ export const SkillItem: FC<SkillItemProps> = ({
     };
 
     useEffect(() => {
-        normalize();
+        setTimeout(normalize, 10);
 
         window.addEventListener('resize', normalize);
         return () => {
