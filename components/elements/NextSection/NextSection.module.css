@@ -1,8 +1,7 @@
 .button {
-    position: absolute;
-    left: 50%;
     bottom: 80px;
-    transform: translateX(-50%);
+    position: absolute;
+    left: calc(50% - 13px);
 }
 
 .icon {
@@ -38,6 +37,10 @@
 }
 
 @media (max-width: 984px) {
+    .button {
+        left: calc(50% - 12px);
+    }
+
     .icon {
         width: 22px;
     }

@@ -6,6 +6,12 @@ import { MouseDown } from "@icons";
 import { motion } from "framer-motion";
 import { useAppSelector } from "@hooks";
 import css from "./NextSection.module.css";
+import classNames from "classnames";
+
+
+type NextSectionProps = {
+    className?: string;
+};
 
 const buttonAnimation = {
     hidden: {
@@ -16,9 +22,10 @@ const buttonAnimation = {
         opacity: 1,
         y: 0
     }
-}
+};
 
-export const NextSection: FC = () => {
+export const NextSection: FC<NextSectionProps> = ({className}) => {
+    const buttonClasses = classNames(className, css.button);
     const buttonElement = useRef<HTMLButtonElement | null>(null);
     const isDocumentReady = useAppSelector(store => store.common.isDocumentReady);
     const animationType: keyof typeof buttonAnimation = isDocumentReady ? "visible" : "hidden";
@@ -34,7 +41,7 @@ export const NextSection: FC = () => {
         <motion.button 
             whileInView={animationType}
             variants={buttonAnimation}
-            className={css.button} 
+            className={buttonClasses} 
             onClick={clickHandler}
             title={'Scroll down'} 
             ref={buttonElement}

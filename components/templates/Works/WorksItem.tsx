@@ -1,4 +1,7 @@
+'use client';
+
 import { FC } from "react";
+import { useWindow } from "@hooks";
 import css from "./Work.module.css";
 import { motion } from "framer-motion";
 import { SkeletonImage } from "@components";
@@ -48,8 +51,10 @@ const linkAnimation = {
 }
 
 export const WorksItem: FC<WorkProps> = ({
-    image, title, url
+    image, title, url, tablet
 }) => {
+    const [width] = useWindow();
+
     return (
         <motion.li 
             initial="hidden"
@@ -58,17 +63,27 @@ export const WorksItem: FC<WorkProps> = ({
             variants={workAnimation}
         >
             <div className={css.wrap}>
-                <SkeletonImage 
-                    alt={title}
-                    src={image}
-                    width={1114}
-                    height={628}
-                    className={css.img}
-                />
+                {width > 600 ? (
+                    <SkeletonImage 
+                        alt={title}
+                        src={image}
+                        width={1420}
+                        height={800}
+                        className={css.img}
+                    />
+                ) : (
+                    <SkeletonImage 
+                        alt={title}
+                        src={tablet}
+                        width={300}
+                        height={600}
+                        className={css.img}
+                    />
+                )}
                 <div className={css.content}>
                     <motion.h3 
                         initial="hidden"
-                        className="h2 mb-5"
+                        className="h2 mb-3 lg:mb-5 text-center"
                         whileInView="visible"
                         variants={titleAnimation}
                     >{title}</motion.h3>

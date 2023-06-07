@@ -1,9 +1,10 @@
 "use client";
 
 import axios from "axios";
-import { serialize } from "@utils";
+import { getWindowProp, serialize } from "@utils";
 import { FC, useRef } from "react";
 import classNames from "classnames";
+import { MediaQueries, useMedia } from "@hooks";
 import { WorksItem } from "./WorksItem";
 import { useInfiniteQuery } from "react-query";
 import { PageProps } from "../../../app/api/posts/route";
@@ -22,12 +23,25 @@ const titleAnimation = {
     }
 }
 
+const getSkeletonHeight = (coef: number) => {
+    const height = getWindowProp('innerHeight') || 0;
+    return height - coef;
+};
+
 export const Works: FC = () => {
     const wrapRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: wrapRef,
         offset: ["start start", "end end"]
     });
+    const mediaValues: MediaQueries<number> = {
+        default: 628,
+        xl: 628,
+        lg: getSkeletonHeight(330),
+        xs: getSkeletonHeight(300),
+        sm: getSkeletonHeight(280)
+    };
+    const skeletonHeight = useMedia(mediaValues);
 
     const {
         data,
@@ -61,7 +75,7 @@ export const Works: FC = () => {
                         initial="hidden"
                         animate="visible"
                         variants={titleAnimation}
-                        className="h2 text-center my-20"
+                        className="h2 text-center my-16 md:my-20"
                     >Works</motion.h1>
                 )}
                 {status !== "error" && (
@@ -85,7 +99,7 @@ export const Works: FC = () => {
                                     <SkeletonTheme baseColor="rgb(var(--primary-rgb))" highlightColor="rgb(var(--dark-rgb))">
                                         <li>
                                             <Skeleton 
-                                                height={628}
+                                                height={skeletonHeight}
                                                 width={wrapRef.current?.offsetWidth || 0}
                                             />
                                         </li>

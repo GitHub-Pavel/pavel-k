@@ -19,7 +19,7 @@ export const MainMenu: FC = () => {
                         ))}
                     </ul>
                 </div>
-                <div className="pb-28 pt-20 sm:pb-10">
+                <div className="pb-16 pt-20 sm:pb-10">
                     <SocialList delay={1}/>
                 </div>
             </div>

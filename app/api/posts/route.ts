@@ -9,6 +9,7 @@ export type WorkProps = {
     url: string;
     image: string;
     title: string;
+    tablet: string;
 };
 
 export type PageProps = {

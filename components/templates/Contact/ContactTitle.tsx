@@ -22,7 +22,7 @@ export const ContactTitle: FC<ContactTitleProps> = ({page}) => {
     return (
         <div className="text-center" ref={titleElement}>
             {page ? (
-                <h1 className="h2 mb-24">Contact</h1>
+                <h1 className="h2 mb-16">Contact</h1>
             ) : (
                 <motion.h2 className="h3 mb-24" style={{ y, opacity }}>Contact</motion.h2>
             )}

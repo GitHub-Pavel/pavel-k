@@ -1,5 +1,6 @@
 'use client';
 
+import { useWindow } from "@hooks";
 import css from "./RecentWorks.module.css";
 import { SkeletonImage } from "@components";
 import { transform, motion } from "framer-motion";
@@ -35,8 +36,9 @@ const linkAnimation = {
 }
 
 export const RecentWork: FC<RecentWorkProps> = ({
-    image, title, url, canvas, index, allWorks
+    image, title, url, canvas, index, allWorks, tablet
 }) => {
+    const [width] = useWindow();
     const workRef = useRef<HTMLDivElement>(null);
     const [visibleHead, setVisibleHead] = useState(false);
     const transformerScale = transform([60, 100], [1, 2]);
@@ -91,17 +93,27 @@ export const RecentWork: FC<RecentWorkProps> = ({
         <li className={css.item}>
             <div className={css.work} ref={workRef}>
                 <div className={css.workWrap}>
-                    <SkeletonImage 
-                        alt={title}
-                        src={image}
-                        width={1114}
-                        height={628}
-                        className={css.image}
-                    />
+                    {width > 600 ? (
+                        <SkeletonImage 
+                            alt={title}
+                            src={image}
+                            width={1114}
+                            height={628}
+                            className={css.image}
+                        />
+                    ) : (
+                        <SkeletonImage 
+                            alt={title}
+                            src={tablet}
+                            width={300}
+                            height={600}
+                            className={css.image}
+                        />
+                    )}
                     <div className={css.content}>
                         <motion.h3 
                             initial="hidden"
-                            className="h2 xl:mb-5 md:mb-3"
+                            className="h2 lg:mb-5 mb-3 text-center"
                             animate={animationType}
                             variants={titleAnimation}
                         >{title}</motion.h3>
