@@ -60,6 +60,10 @@
         opacity: 0;
         pointer-events: none;
     }
+    
+    :global(.footer-visible) .wrap {
+        pointer-events: none;
+    }
 }
 
 @media (max-width: 600px) {
