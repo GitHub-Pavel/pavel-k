@@ -16,8 +16,8 @@ type InputProps = {
 export const Input: FC<InputProps> = forwardRef<HTMLLabelElement, InputProps>((props, ref) => {
     const labelClasses = classNames(props.className, "block");
     const inputClasses = classNames(
-        "py-4 px-5 rounded border-solid border placeholder:text-placeholder bg-transparent w-full outline-none transition-colors duration-200", {
-        "mb-6 border-white focus:border-gray hover:border-gray": !props.error,
+        "py-3 px-4 sm:py-4 sm:px-5 rounded border-solid border placeholder:text-placeholder bg-transparent w-full outline-none transition-colors duration-200", {
+        "mb-4 md:mb-6 border-white focus:border-gray hover:border-gray": !props.error,
         "border-red": props.error
     })
 
@@ -29,7 +29,7 @@ export const Input: FC<InputProps> = forwardRef<HTMLLabelElement, InputProps>((p
                 {...deleteProperty(props, ["className", "error"])}
             />
             {props.error && (
-                <span className="block mt-2 text-red text-less italic pb-px">
+                <span className="block md:mt-2 text-red text-less italic pb-px">
                     {capitalizeFirstLetter(props.error)}
                 </span>
             )}

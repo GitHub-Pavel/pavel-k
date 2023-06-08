@@ -48,7 +48,7 @@ export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
     const wrapClasses = classNames({[css.wrap]: withMessage});
     const btnClasses = classNames({"flex justify-center": withMessage});
     const lastInputClasses = classNames({
-        "mb-9": !withMessage,
+        "mb-6 md:mb-9": !withMessage,
         "mb-4 sm:mb-9": withMessage
     });
 
@@ -73,7 +73,7 @@ export const ContactForm: FC<ContactFormProps> = ({withMessage}) => {
                 </div>
                 {withMessage && (
                     <Textarea 
-                        className="mb-9"
+                        className="mb-6 md:mb-9"
                         {...register("message")}
                         error={errors.message?.message}
                         placeholder="Message ( For example link to docs file )"

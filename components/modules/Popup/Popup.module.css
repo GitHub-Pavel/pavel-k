@@ -34,3 +34,10 @@
     height: 100%;
     z-index: 0;
 }
+
+@media (max-width: 730px) {
+    .close {
+        top: 20px;
+        right: 20px;
+    }
+}

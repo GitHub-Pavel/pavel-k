@@ -91,7 +91,7 @@ export const Popup: FC<PopupProps> = ({
                     {children}
                 </motion.div>
             ) : (
-                <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-40">
+                <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center z-40 p-5">
                     <motion.div
                         initial="hidden"
                         onClick={closeHandler} 

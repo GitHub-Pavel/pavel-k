@@ -3,3 +3,9 @@
     gap: var(--column-gap);
     grid-template-columns: 320px 220px;
 }
+
+@media (max-width: 730px) {
+    .wrap {
+        grid-template-columns: 1fr;
+    }
+}
