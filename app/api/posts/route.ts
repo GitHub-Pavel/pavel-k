@@ -20,10 +20,9 @@ export type PageProps = {
 export async function GET(request: Request) {
     const url = new URL(request.url);
     const searchParams = new URLSearchParams(url.searchParams);
-    const page = searchParams.get('page');
+    const page = searchParams.get('pageParam');
     const count = searchParams.get('count');
     
-
     if (count)
         return NextResponse.json(WORKS.slice(0, +count));
     

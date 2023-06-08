@@ -14,6 +14,7 @@
 }
 
 :global(.loading) .preloader {
+    transition: opacity .0s;
     pointer-events: all;
     opacity: 1;
 }

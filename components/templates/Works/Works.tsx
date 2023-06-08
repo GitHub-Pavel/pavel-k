@@ -1,16 +1,19 @@
 "use client";
 
 import axios from "axios";
-import { getWindowProp, serialize } from "@utils";
 import { FC, useRef } from "react";
-import classNames from "classnames";
-import { MediaQueries, useMedia } from "@hooks";
 import { WorksItem } from "./WorksItem";
 import { useInfiniteQuery } from "react-query";
+import { MediaQueries, useMedia } from "@hooks";
+import { getQuery, getWindowProp } from "@utils";
 import { PageProps } from "../../../app/api/posts/route";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
 
+
+type WorksProps = {
+    page: PageProps; 
+}
 
 const titleAnimation = {
     hidden: {
@@ -28,7 +31,7 @@ const getSkeletonHeight = (coef: number) => {
     return height - coef;
 };
 
-export const Works: FC = () => {
+export const Works: FC<WorksProps> = ({ page }) => {
     const wrapRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: wrapRef,
@@ -48,65 +51,56 @@ export const Works: FC = () => {
         status,
         hasNextPage,
         fetchNextPage
-    } =
-        useInfiniteQuery<PageProps>(
+    } = useInfiniteQuery<PageProps>(
         'works', 
         ({ pageParam = 1 }) => {
-            return axios.get<PageProps>(`/api/posts?${serialize({page: pageParam})}`)
-                .then(res => res.data)
+            const query = getQuery('/api/posts', {pageParam}, true);
+            return axios.get<PageProps>(query).then(res => res.data);
         },
         {
-            getNextPageParam: (lastPage) => lastPage.nextPage
+            getNextPageParam: (lastPage) => lastPage.nextPage,
+            initialData: {
+                pageParams: [(page.nextPage || 2) - 1],
+                pages: [page]
+            }
         }
     );
-
-    const hasPages = data && Boolean(data.pages.length);
-    const sectionClasses = classNames({"section": hasPages});
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         if (latest === 1 && hasNextPage) fetchNextPage();
     });
 
     return (
-        <section className={sectionClasses}>
+        <section className="section">
             <div className="container">
-                {status === "error" || hasPages && (
-                    <motion.h1
-                        initial="hidden"
-                        animate="visible"
-                        variants={titleAnimation}
-                        className="h2 text-center my-16 md:my-20"
-                    >Works</motion.h1>
-                )}
+                <motion.h1
+                    initial="hidden"
+                    animate="visible"
+                    variants={titleAnimation}
+                    className="h2 text-center my-16 md:my-20"
+                >
+                    Works
+                </motion.h1>
                 {status !== "error" && (
                     <div ref={wrapRef}>
-                        {!hasPages ? (
-                            <SkeletonTheme baseColor="rgb(var(--primary-rgb))" highlightColor="rgb(var(--dark-rgb))">
-                                <Skeleton 
-                                    width={wrapRef.current?.offsetWidth || 0}
-                                    className="h-screen"
+                        <ul>
+                            {data?.pages.map(page => page.works.map(work => (
+                                <WorksItem 
+                                    {...work}
+                                    key={work.id}
                                 />
-                            </SkeletonTheme>
-                        ) : (
-                            <ul>
-                                {data.pages.map(page => page.works.map(work => (
-                                    <WorksItem 
-                                        {...work}
-                                        key={work.id}
-                                    />
-                                )))}
-                                {hasNextPage && (
-                                    <SkeletonTheme baseColor="rgb(var(--primary-rgb))" highlightColor="rgb(var(--dark-rgb))">
-                                        <li>
-                                            <Skeleton 
-                                                height={skeletonHeight}
-                                                width={wrapRef.current?.offsetWidth || 0}
-                                            />
-                                        </li>
-                                    </SkeletonTheme>
-                                )}
-                            </ul>
-                        )}
+                            )))}
+                            {hasNextPage && (
+                                <SkeletonTheme baseColor="rgb(var(--primary-rgb))" highlightColor="rgb(var(--dark-rgb))">
+                                    <li>
+                                        <Skeleton 
+                                            height={skeletonHeight}
+                                            width={wrapRef.current?.offsetWidth || 0}
+                                        />
+                                    </li>
+                                </SkeletonTheme>
+                            )}
+                        </ul>
                     </div>
                 )}
             </div>

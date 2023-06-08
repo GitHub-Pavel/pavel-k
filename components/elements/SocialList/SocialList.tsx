@@ -20,7 +20,7 @@ export const SocialList: FC<SocialListProps> = ({ delay = 0.14 }) => {
     );
 
     if (isError) return null;
-    if (isLoading || socials === undefined) 
+    if (isLoading) 
         return (
             <SkeletonTheme baseColor="rgb(var(--primary-rgb))" highlightColor="rgb(var(--dark-rgb))">
                 <Skeleton 
@@ -32,7 +32,7 @@ export const SocialList: FC<SocialListProps> = ({ delay = 0.14 }) => {
 
     return (
         <ul className={css.list}>
-            {socials.map((social, index) => {
+            {socials?.map((social, index) => {
                 const Icon = icons[
                     capitalizeFirstLetter(social.slug) as keyof typeof icons
                 ];
