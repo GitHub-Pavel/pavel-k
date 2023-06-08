@@ -13,7 +13,7 @@ const titlePositions: MediaQueries<number> = {
     lg: 100
 }
 
-const RecentWorksTitle: FC = forwardRef((props, ref) => {
+export const RecentWorksTitle: FC = forwardRef((props, ref) => {
     const titleElement = useRef<HTMLDivElement>(null);
     const [y, opacity] = useAppScroll(titleElement);
     const titleY = useMedia(titlePositions);
@@ -41,5 +41,3 @@ const RecentWorksTitle: FC = forwardRef((props, ref) => {
 });
 
 RecentWorksTitle.displayName = "RecentWorksTitle";
-
-export const MotionRecentWorksTitle = motion(RecentWorksTitle);

@@ -7,8 +7,8 @@ import classNames from "classnames";
 import { useQuery } from "react-query";
 import { RecentWork } from "./RecentWork";
 import css from "./RecentWorks.module.css";
+import { RecentWorksTitle } from "./RecentWorksTitle";
 import { WorkProps } from "../../../app/api/posts/route";
-import { MotionRecentWorksTitle } from "./RecentWorksTitle";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
@@ -44,8 +44,8 @@ export const RecentWorks: FC<RecentWorksProps> = ({speed = 1}) => {
     if (isError) return null;
 
     return (
-        <motion.section className="section" style={{ pointerEvents }}>
-            <MotionRecentWorksTitle style={{ opacity }} />
+        <motion.section className="section" style={{ pointerEvents, opacity }}>
+            <RecentWorksTitle />
             <div className="container">
                 <div 
                     ref={worksCanvas} 

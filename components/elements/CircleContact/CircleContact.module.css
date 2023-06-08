@@ -20,8 +20,10 @@
     animation: 7s linear infinite both IconRotate;
 }
 
-.button:hover .icon {
-    fill: rgb(var(--red-rgb));
+@media (min-width: 984px) {
+    .button:hover .icon {
+        fill: rgb(var(--red-rgb));
+    }
 }
 
 @keyframes IconRotate {
@@ -56,6 +58,7 @@
 
     :global(.footer-visible) .button {
         opacity: 0;
+        pointer-events: none;
     }
 }
 

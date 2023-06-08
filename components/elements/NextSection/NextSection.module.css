@@ -11,8 +11,10 @@
     animation: 4s ease-in-out infinite both IconDrop;
 }
 
-.button:hover .icon {
-    fill: rgb(var(--red-rgb));
+@media (min-width: 984px) {
+    .button:hover .icon {
+        fill: rgb(var(--red-rgb));
+    }
 }
 
 @keyframes IconDrop {

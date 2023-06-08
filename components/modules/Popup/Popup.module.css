@@ -21,8 +21,10 @@
     transition: stroke .2s ease-in-out;
 }
 
-.close:hover svg {
-    stroke: rgb(var(--red-rgb));
+@media (min-width: 984px) {
+    .close:hover svg {
+        stroke: rgb(var(--red-rgb));
+    }
 }
 
 .background {

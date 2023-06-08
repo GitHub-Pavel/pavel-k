@@ -36,44 +36,47 @@
     transition: stroke .1s ease-in-out;
 }
 
-.item.instagram .link:hover svg {
-    stroke: #C13584;
-}
-.item.instagram .link:hover {
-    border-color: #C13584;
-    box-shadow: 0 0 20px #C13584;
-}
 
-.item.telegram .link:hover svg {
-    fill: #2AABEE;
-}
-.item.telegram .link:hover {
-    border-color: #2AABEE;
-    box-shadow: 0 0 20px #2AABEE;
-}
-
-.item.whatsapp .link:hover svg {
-    fill: #28D146;
-}
-.item.whatsapp .link:hover {
-    border-color: #28D146;
-    box-shadow: 0 0 20px #28D146;
-}
-
-.item.github .link:hover svg {
-    fill: #6e5494;
-}
-.item.github .link:hover {
-    border-color: #6e5494;
-    box-shadow: 0 0 20px #6e5494;
-}
-
-.item.linkedin .link:hover svg {
-    fill: #0A66C2;
-}
-.item.linkedin .link:hover {
-    border-color: #0A66C2;
-    box-shadow: 0 0 20px #0A66C2;
+@media (min-width: 984px) {
+    .item.instagram .link:hover svg {
+        stroke: #C13584;
+    }
+    .item.instagram .link:hover {
+        border-color: #C13584;
+        box-shadow: 0 0 20px #C13584;
+    }
+    
+    .item.telegram .link:hover svg {
+        fill: #2AABEE;
+    }
+    .item.telegram .link:hover {
+        border-color: #2AABEE;
+        box-shadow: 0 0 20px #2AABEE;
+    }
+    
+    .item.whatsapp .link:hover svg {
+        fill: #28D146;
+    }
+    .item.whatsapp .link:hover {
+        border-color: #28D146;
+        box-shadow: 0 0 20px #28D146;
+    }
+    
+    .item.github .link:hover svg {
+        fill: #6e5494;
+    }
+    .item.github .link:hover {
+        border-color: #6e5494;
+        box-shadow: 0 0 20px #6e5494;
+    }
+    
+    .item.linkedin .link:hover svg {
+        fill: #0A66C2;
+    }
+    .item.linkedin .link:hover {
+        border-color: #0A66C2;
+        box-shadow: 0 0 20px #0A66C2;
+    }
 }
 
 
