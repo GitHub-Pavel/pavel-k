@@ -60,7 +60,7 @@ export const Works: FC<WorksProps> = ({ page }) => {
         {
             getNextPageParam: (lastPage) => lastPage.nextPage,
             initialData: {
-                pageParams: [(page.nextPage || 2) - 1],
+                pageParams: [undefined],
                 pages: [page]
             }
         }
