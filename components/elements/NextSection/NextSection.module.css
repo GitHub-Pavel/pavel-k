@@ -41,15 +41,10 @@
 @media (max-width: 984px) {
     .button {
         left: calc(50% - 12px);
+        bottom: 80px;
     }
 
     .icon {
         width: 22px;
-    }
-}
-
-@media (max-width: 730px) {
-    .button {
-        bottom: 35px;
     }
 }

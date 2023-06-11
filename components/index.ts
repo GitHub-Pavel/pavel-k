@@ -26,5 +26,5 @@ export { Notifications } from './modules/Notifications/Notifications';
 export { InitialEvents } from './modules/InitialEvents/InitialEvents';
 export { QueryProvider } from './modules/QueryProvider/QueryProvider';
 export { CircleContact } from './elements/CircleContact/CircleContact';
-export { SkeletonImage } from './elements/SkeletonImage/SkeletonImage';
 export { SkillsTransition } from './templates/SkillsTransition/SkillsTransition';
+export { SkeletonImage, MotionSkeletonImage } from './elements/SkeletonImage/SkeletonImage';

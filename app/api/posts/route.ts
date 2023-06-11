@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     const url = new URL(request.url);
     const searchParams = new URLSearchParams(url.searchParams);
     const page = searchParams.get('pageParam');
-    const count = searchParams.get('count');
+    const count = Number( searchParams.get('count') ) || 5; // standart for page
     
     if (count)
         return NextResponse.json(WORKS.slice(0, +count));
@@ -31,8 +31,8 @@ export async function GET(request: Request) {
         let works: WorkProps[] = [];
 
         const currentPage = +page-1;
-        const firstIndex = currentPage*5;
-        const lastIndex = currentPage*5+5;
+        const firstIndex = currentPage*count;
+        const lastIndex = currentPage*count+count;
 
         works = WORKS.slice( firstIndex, lastIndex );
 

@@ -2,19 +2,21 @@
 
 import Image from "next/image";
 import classNames from "classnames";
-import { FC, useState } from "react";
+import { motion } from "framer-motion";
+import { forwardRef, useState } from "react";
 import css from "./SkeletonImage.module.css";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 type SkeletonImageProps = {
     src: string;
+    alt: string;
     width: number;
     height: number;
-    alt: string;
     className?: string;
+    priority?: boolean;
 };
 
-export const SkeletonImage: FC<SkeletonImageProps> = ({className, width, height, ...props}) => {
+export const SkeletonImage = forwardRef<HTMLDivElement, SkeletonImageProps>(({className, width, height, ...props}, ref) => {
     const [isLoaded, setLoaded] = useState(false);
     const SkeletonClasses = classNames(className, css.img);
 
@@ -23,7 +25,7 @@ export const SkeletonImage: FC<SkeletonImageProps> = ({className, width, height,
     }
 
     return (
-        <div className={SkeletonClasses}>
+        <div className={SkeletonClasses} ref={ref}>
             {!isLoaded && (
                 <SkeletonTheme baseColor="rgb(var(--primary-rgb))" highlightColor="rgb(var(--dark-rgb))">
                     <div className={css.loading}>
@@ -40,4 +42,8 @@ export const SkeletonImage: FC<SkeletonImageProps> = ({className, width, height,
             />
         </div>
     );
-}
+});
+
+SkeletonImage.displayName = "SkeletonImage";
+
+export const MotionSkeletonImage = motion(SkeletonImage);

@@ -9,10 +9,11 @@
     flex-direction: column;
 }
 
-.img {
+.wrap .img {
     position: absolute;
     top: 25vh;
     z-index: -1;
+    width: 642px;
 }
 
 .wrap {
@@ -25,7 +26,7 @@
         padding-top: 0;
     }
 
-    .img {
+    .wrap .img {
         top: 20vh;
         width: 54vw;
     }
@@ -36,7 +37,7 @@
         min-height: 780px;
     }
 
-    .img {
+    .wrap .img {
         top: 30vh;
         width: 60vw;
         left: calc(50% - 29vw);
@@ -59,7 +60,7 @@
         margin-bottom: 20vh;
     }
 
-    .img {
+    .wrap .img {
         top: 50vh;
         width: 80vw;
         left: calc(50% - 39vw);

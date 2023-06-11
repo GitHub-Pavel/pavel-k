@@ -12,8 +12,8 @@ type PageParams = {
 
 type Params = CountParams | PageParams;
 
-export async function getPosts(params: Params) {
-    const query = getQuery('/api/posts', params);
+export async function getPosts(params: Params, client?: boolean) {
+    const query = getQuery('/api/posts', params, client);
     const { status, data } = await axios.get(query);
 
     if (data && status === 200) {

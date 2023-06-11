@@ -1,11 +1,10 @@
 "use client";
 
-import axios from "axios";
 import { FC, useRef } from "react";
 import { WorksItem } from "./WorksItem";
 import { useInfiniteQuery } from "react-query";
 import { MediaQueries, useMedia } from "@hooks";
-import { getQuery, getWindowProp } from "@utils";
+import { getPosts, getWindowProp } from "@utils";
 import { PageProps } from "../../../app/api/posts/route";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
@@ -52,12 +51,9 @@ export const Works: FC<WorksProps> = ({ page }) => {
         hasNextPage,
         fetchNextPage
     } = useInfiniteQuery<PageProps>(
-        'works', 
-        ({ pageParam = 1 }) => {
-            const query = getQuery('/api/posts', {pageParam}, true);
-            return axios.get<PageProps>(query).then(res => res.data);
-        },
+        'works',
         {
+            queryFn: ({ pageParam = 1 }) => getPosts({ pageParam }, true),
             getNextPageParam: (lastPage) => lastPage.nextPage,
             initialData: {
                 pageParams: [undefined],

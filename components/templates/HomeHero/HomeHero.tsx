@@ -1,14 +1,11 @@
 'use client';
 
 import { FC } from "react";
-import Image from 'next/image';
 import classNames from 'classnames';
 import css from "./HomeHero.module.css";
-import { NextSection, TypeWriter } from "@components";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
+import { MotionSkeletonImage, NextSection, TypeWriter } from "@components";
 
-
-const MotionImage = motion(Image);
 
 export const HomeHero: FC = () => {
     const { scrollY } = useScroll();
@@ -24,7 +21,7 @@ export const HomeHero: FC = () => {
                     />
                 </h1>
                 <div className={css.wrap}>
-                    <MotionImage
+                    <MotionSkeletonImage
                         alt='Pavel K.'
                         src='/main-screen.jpeg'
                         style={{ y }}
