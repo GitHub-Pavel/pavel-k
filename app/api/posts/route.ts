@@ -23,9 +23,6 @@ export async function GET(request: Request) {
     const page = searchParams.get('pageParam');
     const count = Number( searchParams.get('count') ) || 5; // standart for page
     
-    if (count)
-        return NextResponse.json(WORKS.slice(0, +count));
-    
     if (page) {
         let nextPage: NextPage = null;
         let works: WorkProps[] = [];
@@ -43,6 +40,10 @@ export async function GET(request: Request) {
         const res: PageProps = {works, nextPage};
 
         return NextResponse.json(res);
+    }
+
+    if (count && !page) {
+        return NextResponse.json(WORKS.slice(0, +count));
     }
 
 

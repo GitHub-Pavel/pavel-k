@@ -1,6 +1,7 @@
 import axios from "axios";
 import { getQuery } from "@utils";
 import { PageProps, WorkProps } from "../app/api/posts/route";
+import { cache } from "react";
 
 type CountParams = {
     count: number;
@@ -12,13 +13,8 @@ type PageParams = {
 
 type Params = CountParams | PageParams;
 
-export async function getPosts(params: Params, client?: boolean) {
+export const getPosts = cache(async (params: Params, client?: boolean) => {
     const query = getQuery('/api/posts', params, client);
-    const { status, data } = await axios.get(query);
-
-    if (data && status === 200) {
-        return data;
-    }
-
-    throw new Error('Not founded');
-}
+    const { data } = await axios.get(query);
+    return data;
+});

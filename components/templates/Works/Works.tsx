@@ -1,10 +1,11 @@
 "use client";
 
+import { getPosts } from "@utils";
 import { FC, useRef } from "react";
 import { WorksItem } from "./WorksItem";
 import { useInfiniteQuery } from "react-query";
 import { MediaQueries, useMedia } from "@hooks";
-import { getPosts, getWindowProp } from "@utils";
+import { getSkeletonHeight } from "./works-utils";
 import { PageProps } from "../../../app/api/posts/route";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { useScroll, useMotionValueEvent, motion } from "framer-motion";
@@ -24,11 +25,6 @@ const titleAnimation = {
         y: 0
     }
 }
-
-const getSkeletonHeight = (coef: number) => {
-    const height = getWindowProp('innerHeight') || 0;
-    return height - coef;
-};
 
 export const Works: FC<WorksProps> = ({ page }) => {
     const wrapRef = useRef<HTMLDivElement>(null);
