@@ -76,7 +76,7 @@ export const Works: FC<WorksProps> = ({ page }) => {
                 {status !== "error" && (
                     <div ref={wrapRef}>
                         <ul>
-                            {data?.pages.map(page => Array.isArray(page?.works) && page.works.map(work => (
+                            {data?.pages.map(page => Array.isArray(page.works) && page.works.map(work => (
                                 <WorksItem 
                                     {...work}
                                     key={work.id}
