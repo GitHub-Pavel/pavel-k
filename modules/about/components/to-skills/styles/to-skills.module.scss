@@ -1,0 +1,18 @@
+.toSkills {
+    display: flex;
+    align-items: center;
+
+    svg {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}
+
+.line {
+    background-color: $color-white;
+    border-radius: 4px;
+    height: 2px;
+    flex: 1 1;
+}

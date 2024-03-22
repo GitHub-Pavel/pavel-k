@@ -1,0 +1,19 @@
+.h1 {
+    font-size: clamp(4.8rem, 3.2rem + 1.667vw, 6.4rem);
+}
+
+.h2 {
+    font-size: clamp(3.6rem, 3.451rem + 0.381vw, 4rem);
+}
+
+.h3 {
+    font-size: clamp(2.7rem, 2.2rem + 0.521vw, 3.2rem);
+}
+
+.h4 {
+    font-size: clamp(2.2rem, 2.126rem + 0.19vw, 2.4rem);
+}
+
+.heading {
+    line-height: 100%;
+}

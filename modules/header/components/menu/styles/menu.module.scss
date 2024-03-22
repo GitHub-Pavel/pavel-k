@@ -1,0 +1,9 @@
+.list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include media-min($media-2k) {
+        gap: 50px;
+    }
+}

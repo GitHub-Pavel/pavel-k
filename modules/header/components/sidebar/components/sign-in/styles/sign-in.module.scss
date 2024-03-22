@@ -1,0 +1,7 @@
+.signIn {
+    transition: .2s;
+
+    @include no-hover {
+        color: $color-blue;
+    }
+}

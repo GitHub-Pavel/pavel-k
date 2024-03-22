@@ -1,0 +1,7 @@
+.link {
+    transition: color .2s;
+
+    @include no-hover {
+        color: $color-blue;
+    }
+}

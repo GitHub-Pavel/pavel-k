@@ -1,16 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "rootDir": "./",
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -18,22 +15,12 @@
     "plugins": [
       {
         "name": "next"
-      },
-      {
-        "name": "typescript-plugin-css-modules"
       }
     ],
     "paths": {
-      "@components": ["./components"],
-      "@types": ["./types"],
-      "@store": ["./store"],
-      "@icons": ["./icons"],
-      "@hooks": ["./hooks"],
-      "@utils": ["./utils"],
-      "@constants": ["./constants"],
-      "@services": ["./services"],
+      "@/*": ["./*"]
     }
   },
-  "include": [ "additional.d.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

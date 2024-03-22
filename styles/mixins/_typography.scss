@@ -1,0 +1,4 @@
+@mixin text-normal {
+    font-size: clamp(1.5rem, 1.3rem + 0.208vw, 1.7rem);
+    line-height: 1.4em;
+} 

@@ -1,0 +1,77 @@
+@mixin center-position {
+    &Left {
+        right: 50%;
+    }
+    
+    &Right {
+        left: 50%;
+    }
+}
+
+@mixin layer {
+    &Left, &Right {
+        top: 0;
+        height: 100vh;
+        position: absolute;
+    }
+
+    @include center-position;
+}
+
+.preloader {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: .2s ease-in-out;
+}
+
+.start {
+    .caretLeft, .caretRight {
+        animation: none;
+        background-color: $color-white;
+        transition: background-color .2s;
+    }
+}
+
+.dissapear {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.caret {
+    &Left, &Right {
+        width: 4px;
+        height: 6rem;
+        animation: blink-caret-white .75s infinite;
+        transform: translateY(-50%);
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+    }
+
+    @include center-position;
+}
+
+.background {
+    &Left, &Right {
+        width: 50vw;
+        background-color: $color-dark;
+    }
+
+    @include layer;
+}
+
+.gate {
+    &Left, &Right {
+        z-index: 1;
+        background-color: $color-gray;
+    }
+
+    @include layer;
+}

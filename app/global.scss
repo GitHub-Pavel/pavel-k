@@ -1,0 +1,45 @@
+html {
+  font-size: 10px;
+}
+
+* {
+  box-sizing: border-box;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $color-black;
+  color: $color-white;
+
+  @include text-normal;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.container {
+  &-large {
+    padding: 0 20px;
+
+    @include media-min($media-2k) {
+      padding: 0 60px;
+    }
+  }
+}
+
+svg {
+  fill: currentColor;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: inline-block;
+}

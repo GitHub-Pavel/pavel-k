@@ -1,0 +1,10 @@
+.img {
+    perspective: 600px;
+    align-items: center;
+    display: flex;
+    height: 100%;
+
+    @include media-min($media-2k) {
+        height: auto;
+    }
+}

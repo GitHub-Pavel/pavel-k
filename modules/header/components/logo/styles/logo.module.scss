@@ -1,0 +1,18 @@
+.logo {
+    width: clamp(10rem, 8.2rem + 1.875vw, 11.8rem);
+    display: block;
+
+    svg {
+        fill: none;
+        transition: color .2s;
+        display: block;
+
+        path {
+            fill: currentColor;
+        }
+    }
+
+    @include no-hover {
+        color: $color-blue;
+    }
+}

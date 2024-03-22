@@ -1,26 +1,13 @@
-import { 
-  Main,
-  About, 
-  Skills, 
-  Contact, 
-  HomeHero,
-  RecentWorks, 
-  SkillsTransition, 
-} from '@components';
-import { getPosts } from '@utils';
+import { Header } from "@/modules";
+import { About } from "@/modules/about/About";
+import { Preloader } from "@/ui";
 
-
-export default async function Home() {
-  const posts = await getPosts({count: 3});
-
+export default function Home() {
   return (
-    <Main>
-      <HomeHero />
+    <main>
+      <Preloader />
+      <Header />
       <About />
-      <SkillsTransition />
-      <Skills />
-      <RecentWorks posts={posts || []} />
-      <Contact />
-    </Main>
-  )
-};
+    </main>
+  );
+}

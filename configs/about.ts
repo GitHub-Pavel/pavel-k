@@ -1,0 +1,1 @@
+export const ABOUT_ME_TEXT = 'Experienced PHP and JavaScript web developer with over 3 years of hands-on experience. Skilled in crafting dynamic and user-friendly web applications. Proficient in building responsive and interactive websites.'

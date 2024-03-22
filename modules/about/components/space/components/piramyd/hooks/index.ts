@@ -1,0 +1,1 @@
+export { usePiramyd } from './use-piramyd'

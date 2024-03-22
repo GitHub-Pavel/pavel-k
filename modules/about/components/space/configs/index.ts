@@ -1,0 +1,1 @@
+export { PIRAMYDS } from './canvas'

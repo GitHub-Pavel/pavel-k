@@ -1,0 +1,11 @@
+@import "./variables";
+
+@keyframes blink-caret-gray {
+    from, to { background-color: transparent; }
+    50% { background-color: $color-gray; }
+}
+
+@keyframes blink-caret-white {
+    from, to { background-color: transparent; }
+    50% { background-color: $color-white; }
+}

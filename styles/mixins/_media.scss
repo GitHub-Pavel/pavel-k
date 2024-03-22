@@ -1,0 +1,25 @@
+@mixin media-min($media, $offset: 1px) {
+    @media (min-width: #{$media + $offset}) {
+        @content;
+    }
+}
+
+@mixin media-max($media, $offset: 0px) {
+    @media (max-width: #{$media + $offset}) {
+        @content;
+    }
+}
+
+@mixin no-hover {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+    
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
