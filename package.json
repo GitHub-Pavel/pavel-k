@@ -1,49 +1,23 @@
 {
   "name": "pavel-k",
-  "version": "0.1.0",
-  "private": true,
+  "version": "3.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GitHub-Pavel/pavel-k.git"
+  },
+  "author": "Pavel K.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GitHub-Pavel/pavel-k/issues"
+  },
+  "homepage": "https://github.com/GitHub-Pavel/pavel-k#readme",
   "dependencies": {
-    "@hookform/resolvers": "^3.1.0",
-    "@lottiefiles/lottie-player": "^1.7.1",
-    "@reduxjs/toolkit": "^1.9.5",
-    "@sendgrid/mail": "^7.7.0",
-    "@svgr/webpack": "^8.0.1",
-    "@types/classnames": "^2.3.1",
-    "@types/jump.js": "^1.0.4",
-    "@types/lodash": "^4.14.195",
-    "@types/node": "20.2.3",
-    "@types/react": "18.2.6",
-    "@types/react-dom": "18.2.4",
-    "@types/react-redux": "^7.1.25",
-    "@types/yup": "^0.32.0",
-    "autoprefixer": "10.4.14",
-    "axios": "^1.4.0",
-    "classnames": "^2.3.2",
-    "eslint": "8.41.0",
-    "eslint-config-next": "13.4.3",
-    "framer-motion": "^10.12.14",
-    "jump.js": "^1.0.2",
-    "lodash": "^4.17.21",
-    "next": "13.4.3",
-    "postcss": "8.4.23",
-    "react": "18.2.0",
-    "react-content-loader": "^6.2.1",
-    "react-dom": "18.2.0",
-    "react-hook-form": "^7.44.1",
-    "react-loading-skeleton": "^3.3.1",
-    "react-query": "^3.39.3",
-    "react-redux": "^8.0.5",
-    "svgo-loader": "^4.0.0",
-    "tailwind-scrollbar": "^3.0.4",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.0.4",
-    "typescript-plugin-css-modules": "^5.0.1",
-    "yup": "^1.2.0"
+    "@fastify/static": "^10.1.5",
+    "fastify": "^5.12.5"
   }
 }
