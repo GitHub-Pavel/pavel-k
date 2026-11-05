@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,11 +15,9 @@
   <meta property="og:title" content="Pavel Khatkevich — TypeScript Fullstack Developer">
   <meta property="og:description" content="Building scalable web applications with modern cloud technologies.">
 
-  <!-- Google Fonts: Geist -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link rel="preload" href="/assets/cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts.css">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body class="bg-grain">
@@ -27,19 +25,25 @@
   <!-- Header -->
   <header class="site-header">
     <div class="page-shell page-shell--fluid site-header__block">
-      <a href="#" class="site-header__logo">PK</a>
-  
-      <nav class="site-header__nav">
+      <a href="#hero" class="site-header__logo">PK</a>
+
+      <nav class="site-header__nav" id="site-nav" aria-label="Main">
+        <a href="#skills" class="site-header__nav-link">Skills</a>
         <a href="#work" class="site-header__nav-link">Work</a>
-        <a href="#about" class="site-header__nav-link">About</a>
-        <a href="#notes" class="site-header__nav-link">Notes</a>
+        <a href="#archive" class="site-header__nav-link">Archive</a>
+        <a href="#about" class="site-header__nav-link">About me</a>
         <a href="#contact" class="site-header__nav-link">Contact</a>
       </nav>
+
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
   <!-- Main Hero Area -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero__grid page-shell page-shell--fluid">
 
       <div class="hero__content">
@@ -83,9 +87,7 @@
 
       </div>
 
-      <img src="/assets/2.png" alt="Pavel Khatkevich">
-
-      <aside class="keywords" aria-label="Tagline">
+      <aside class="keywords hero-keywords" aria-label="Tagline">
         <div class="keywords-inner">
           <span class="keywords-number">(01)</span>
           <div class="keywords-text">
@@ -95,21 +97,20 @@
           </div>
           <div class="keywords__line keywords__line--down"></div>
         </div>
+        <img src="/assets/2.png" class="main-photo" alt="Pavel Khatkevich">
       </aside>
 
     </div>
 
-    
-
     <footer class="hero-footer page-shell page-shell--fluid">
       <div class="hero-footer__social">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+        <a href="https://www.linkedin.com/in/pavel-khatkevich-298895319/" target="_blank" rel="noopener noreferrer"
           class="hero-footer__social-link">LINKEDIN</a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="hero-footer__social-link">GITHUB</a>
-        <a href="mailto:alex@krastins.com" class="hero-footer__social-link">TELEGRAM</a>
-        <a href="mailto:alex@krastins.com" class="hero-footer__social-link">EMAIL</a>
+        <a href="https://github.com/GitHub-Pavel/" target="_blank" rel="noopener noreferrer" class="hero-footer__social-link">GITHUB</a>
+        <a href="https://t.me/pac1f1c_0cean/" target="_blank" rel="noopener noreferrer" class="hero-footer__social-link">TELEGRAM</a>
+        <a href="mailto:pkhatkevich@gmail.com" class="hero-footer__social-link">EMAIL</a>
       </div>
-    
+
       <a href="#skills" class="hero-footer__scroll">
         SCROLL
         <svg class="hero-footer__scroll-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -118,11 +119,13 @@
         </svg>
       </a>
     </footer>
+
+    <canvas class="hero-bg"></canvas>
   </section>
 
-  <section class="section" id="skills">
+  <section class="section section--long" id="skills">
     <div class="page-shell page-shell--fluid">
-  
+
       <!-- Header -->
       <header class="row row--between-center">
         <div class="section-label">
@@ -130,7 +133,7 @@
           <div class="line"></div>
           <span>EXPERTISE</span>
         </div>
-        
+
         <aside class="keywords keywords--light" aria-label="Tagline">
           <div class="keywords-inner">
             <div class="keywords-text">
@@ -141,7 +144,7 @@
           </div>
         </aside>
       </header>
-  
+
       <div class="section-hero">
         <h2 class="h2">Tech Skills</h2>
         <div class="section-hero__content">
@@ -151,99 +154,150 @@
           </p>
         </div>
       </div>
-  
-      <!-- Skills -->
+
+      <!-- Skills: row 1 -->
       <div class="skills-grid">
-  
+
         <article class="skill-card">
           <div class="card-label">
             <span>01</span>
             <div class="line"></div>
             <span>FRONTEND</span>
           </div>
-  
+
           <ul>
             <li>TypeScript</li>
             <li>React</li>
             <li>Next.js</li>
           </ul>
+
+          <ul class="skill-card__also">
+            <li>FSD</li>
+            <li>RTK</li>
+            <li>Vite</li>
+            <li>Webpack</li>
+            <li>Rollup</li>
+            <li>Zod</li>
+            <li>TanStack</li>
+            <li>React Query</li>
+            <li>Jotai</li>
+            <li>React Hooks</li>
+            <li>React Native</li>
+          </ul>
         </article>
-  
+
         <article class="skill-card bordered">
           <div class="card-label">
             <span>02</span>
             <div class="line"></div>
             <span>BACKEND</span>
           </div>
-  
+
           <ul>
             <li>Node.js</li>
             <li>NestJS</li>
           </ul>
+
+          <ul class="skill-card__also">
+            <li>REST</li>
+            <li>GraphQL</li>
+            <li>Microservices</li>
+            <li>Docker</li>
+            <li>CI/CD</li>
+            <li>Git</li>
+            <li>Github Actions</li>
+            <li>CQRS</li>
+            <li>express</li>
+            <li>fastify</li>
+            <li>DDD</li>
+            <li>Event Storming</li>
+            <li>WordPress</li>
+            <li>PHP</li>
+            <li>DI</li>
+            <li>KISS</li>
+            <li>DRY</li>
+            <li>SOLID</li>
+          </ul>
         </article>
-  
+
         <article class="skill-card bordered">
           <div class="card-label">
             <span>03</span>
             <div class="line"></div>
             <span>DATABASE</span>
           </div>
-  
+
           <ul>
             <li>PostgreSQL</li>
             <li>Redis</li>
+            <li>TypeORM</li>
+          </ul>
+
+          <ul class="skill-card__also">
+            <li>MySQL</li>
+            <li>PrismaORM</li>
+            <li>ACID transactions</li>
+            <li>Repository pattern</li>
           </ul>
         </article>
-  
+
       </div>
-  
+
       <hr>
-  
-      <!-- Architecture -->
-      <div class="architecture">
-  
-        <div>
+
+      <!-- Skills: row 2 -->
+      <div class="skills-grid skills-grid--3to2">
+
+        <article class="skill-card">
           <div class="card-label">
             <span>04</span>
             <div class="line"></div>
             <span>ARCHITECTURE</span>
           </div>
-  
-          <h3 class="h4">
-            Building maintainable and scalable products
-            through Feature-Sliced Design (FSD), Domain-Driven
-            Design (DDD) and Clean Architecture.
-          </h3>
-        </div>
-  
-        <div class="architecture-side">
-          <p>
-            I focus on clean structure, clear boundaries and
-            long-term maintainability to create products that
-            scale with business needs.
+
+          <ul>
+            <li>Feature-Sliced Design</li>
+            <li>Domain-Driven Design</li>
+            <li>Clean Architecture</li>
+          </ul>
+
+          <p class="skill-card__text">
+            Clear boundaries and long-term maintainability,
+            so products scale with the business.
           </p>
-        </div>
-  
+        </article>
+
+        <article class="skill-card bordered">
+          <div class="card-label">
+            <span>05</span>
+            <div class="line"></div>
+            <span>AI ENGINEER</span>
+          </div>
+
+          <ul>
+            <li>Claude Code</li>
+            <li>Cursor</li>
+            <li>Skills</li>
+          </ul>
+
+          <ul class="skill-card__also">
+            <li>Zed</li>
+            <li>ACP</li>
+            <li>MCP</li>
+            <li>RAG</li>
+            <li>Codex</li>
+          </ul>
+        </article>
+
       </div>
-  
-      <div class="architecture-footer">
-        <div class="architecture-footer__group">
-          <div class="line architecture-footer__line"></div>
-          <span>CONTINUOUSLY LEARNING</span>
-        </div>
-        <div class="architecture-footer__group">
-          <span>ALWAYS BUILDING</span>
-          <div class="line architecture-footer__line"></div>
-        </div>
-      </div>
-  
+
     </div>
   </section>
 
 
-  <section class="section" id="works">
+  <section class="section" id="work">
     <div class="page-shell page-shell--fluid">
-  
+
       <!-- Header -->
       <header class="row row--between-center">
         <div class="section-label">
@@ -251,7 +305,7 @@
           <div class="line"></div>
           <span>SELECTED WORK</span>
         </div>
-  
+
         <aside class="keywords keywords--light" aria-label="Tagline">
           <div class="keywords-inner">
             <div class="keywords-text">
@@ -262,7 +316,7 @@
           </div>
         </aside>
       </header>
-  
+
       <div class="section-hero">
         <h2 class="h2">Portfolio</h2>
         <div class="section-hero__content">
@@ -275,104 +329,215 @@
       <div class="works-grid">
 
         <article class="work-project">
-        
+
           <div class="work-project__content">
             <!-- Project introduction -->
             <div class="work-project__intro">
-            
+
               <div class="work-project__overview">
                 <div class="card-label work-project__card-label">
                   <span>01</span>
                   <div class="line"></div>
                   <span>MARKETPLACE</span>
                 </div>
-            
+
                 <h3 class="work-project__title">YouHelp</h3>
-            
+
                 <p class="work-project__description">
                   Online platform that connects families with verified nannies, babysitters, caregivers, tutors, and other household
                   professionals. Users can browse specialist profiles, read reviews, publish job listings, and communicate directly with
                   candidates. The service focuses on making it easier and safer to find reliable help for everyday family needs.
                 </p>
-              </div>
-            
-              <div class="work-project__contribution">
-                <h4 class="work-project__label">MY CONTRIBUTION</h4>
-            
-                <p class="work-project__contribution-text">
-                  Contributed to backend refactoring using DDD, NestJS, TypeORM, and PostgreSQL. Developed core order management features,
-                  including provider matching, chats, state management, and payment integration. Implemented Feature-Sliced Design and
-                  Redux Toolkit to improve frontend architecture and component reusability. Built a metrics collection service, configured
-                  CI/CD with GitHub Actions, and standardized development environments using Docker Dev Containers, reducing setup time
-                  from days to minutes.
-                </p>
+
+                <div class="article work-project__article" data-slug="youhelp">
+                  <h4>My Contribution</h4>
+                  <p>As a Full-Stack Developer, I worked across backend architecture, frontend development, and infrastructure, focusing
+                    on
+                    core marketplace functionality and codebase maintainability.</p>
+                  <p>I contributed to migrating the legacy backend toward DDD and Clean Architecture using NestJS, TypeORM, and
+                    PostgreSQL.
+                    By improving domain separation and isolating data persistence through the Repository pattern, I helped reduce
+                    coupling
+                    and support reliable transactional workflows.
+                    <button class="article-more" data-slug="youhelp">Read more</button>
+                  </p>
+                  <div class="article__hidden">
+                    <p>I developed core order management features, including order creation, provider matching, chat workflows, and a
+                      state
+                      machine enforcing business rules and valid order transitions. I also integrated payment gateway functionality to
+                      support
+                      secure transactions.</p>
+                    <p>On the frontend, I introduced Feature-Sliced Design (FSD) and structured global state management with Redux
+                      Toolkit,
+                      improving code organization and component reuse across parent and babysitter dashboards. Migrating to Vite
+                      accelerated
+                      local development and Hot Module Replacement.</p>
+                    <p>Beyond application development, I built a metrics microservice for aggregating technical and product data,
+                      configured
+                      GitHub Actions pipelines for automated testing and deployment, and introduced Docker Dev Containers, reducing
+                      developer
+                      environment setup from several days to minutes.</p>
+                    <p>These contributions helped modernize legacy systems, strengthen order workflow reliability, and establish a more
+                      maintainable codebase while supporting faster feature delivery.</p>
+                  </div>
+                </div>
 
               </div>
-            
+
+              <div class="work-project__contribution">
+                <div class="work-project__image-background">
+                  <div class="work-project__image-box">
+                    <img src="/assets/screencapture-youhelp.png" alt="Pavel Khatkevich" class="work-project__image">
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             <hr />
-            
+
             <!-- Project metadata -->
             <div class="work-project__details">
-            
+
               <div class="work-project__technologies">
                 <h4 class="work-project__label">TECHNOLOGIES</h4>
-            
+
                 <ul class="work-project__technology-list">
-                  <li>TypeScript</li>
-                  <li>React</li>
-                  <li>FSD</li>
-                  <li>Redux Toolkit</li>
-                  <li>NestJS</li>
-                  <li>DDD</li>
-                  <li>CQRS</li>
-                  <li>PostgreSQL</li>
-                  <li>TypeORM</li>
-                  <li>Redis</li>
-                  <li>Docker</li>
+                    <li>React</li>
+                    <li>Vite</li>
+                    <li>Webpack</li>
+                      <li>Rollup</li>
+                      <li>TypeScript</li>
+                      <li>RTK</li>
+                      <li>FSD</li>
+                      <li>Node.js</li>
+                      <li>NestJS</li>
+                      <li>DDD</li>
+                      <li>PostgreSQL</li>
+                      <li>TypeORM</li>
+                      <li>ACID Transactions</li>
+                      <li>GitHub</li>
+                      <li>Docker</li>
+                      <li>Microservices</li>
                 </ul>
               </div>
-            
+
               <div class="work-project__footer">
                 <div class="work-project__role">
                   <h4 class="work-project__label">ROLE</h4>
                   <p>Full-stack developer</p>
                 </div>
-            
-                <a class="work-project__link" href="YOUR_PROJECT_URL_HERE" target="_blank" rel="noopener noreferrer">
+
+                <a class="work-project__link" href="https://youhelp.ru/" target="_blank" rel="noopener noreferrer">
                   View project
-            
+
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
                       stroke-linejoin="round" />
                   </svg>
                 </a>
               </div>
-            
+
             </div>
           </div>
-        
-          <!-- Website screenshot -->
-          <div class="work-project__preview">
-            <div class="work-project__preview-box">
-              <div class="work-project__image-box">
-                <img class="work-project__image" src="/assets/screencapture-youhelp.png" alt="Acme Finance website interface"
-                  loading="lazy" decoding="async" />
-                <img class="work-project__image" src="/assets/screencapture-youhelp.png" alt="Acme Finance website interface"
-                  loading="lazy" decoding="async" />
+
+        </article>
+
+        <article class="work-project work-project--reverse">
+
+          <div class="work-project__content">
+            <!-- Project introduction -->
+            <div class="work-project__intro">
+
+              <div class="work-project__contribution">
+                <div class="work-project__image-background">
+                  <div class="work-project__image-box">
+                    <img src="/assets/channekchek.png" alt="Pavel Khatkevich" class="work-project__image">
+                  </div>
+                </div>
               </div>
+
+              <div class="work-project__overview">
+                <div class="card-label work-project__card-label">
+                  <span>02</span>
+                  <div class="line"></div>
+                  <span>FINANCIAL RESEARCH PLATFORM</span>
+                </div>
+
+                <h3 class="work-project__title">Channelchek</h3>
+
+                <p class="work-project__description">
+                    An investment research platform focused on small- and micro-cap companies. It provides investors with equity research, financial data, market news, company profiles, and executive interviews to help them evaluate emerging businesses and identify investment opportunities.
+                </p>
+
+                <div class="article work-project__article" data-slug="youhelp-2">
+                  <h4>My Contribution</h4>
+                  <p>
+                      As a Full-Stack Developer, I built Channelchek from scratch, taking ownership of the platform's implementation across the frontend, backend, and data layers.
+                  </p>
+                  <p>
+                    My responsibilities included setting up the Next.js application, developing reusable React components and pages with TypeScript, and implementing global state management with Redux Toolkit. I built the integration between the frontend and the WordPress CMS, developed GraphQL queries for retrieving content, and implemented backend functionality using PHP. I also worked with MySQL to support data storage and retrieval.
+                    <button class="article-more" data-slug="youhelp-2">Read more</button>
+                  </p>
+                  <div class="article__hidden">
+                      <p>I was responsible for connecting these technologies into a unified application, implementing data flows between the frontend and backend, and ensuring that content managed through WordPress could be delivered to the user-facing platform. I established the project's core code structure and organized application logic to support maintainability and future development.</p>
+                      <p>From the initial setup to the integration of the main application components, I implemented the platform's technical foundation, delivering a working financial research website designed to present company profiles, investment research, and market-related content.</p>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+            <hr />
+
+            <!-- Project metadata -->
+            <div class="work-project__details">
+
+              <div class="work-project__technologies">
+                <h4 class="work-project__label">TECHNOLOGIES</h4>
+
+                <ul class="work-project__technology-list">
+                  <li>TypeScript</li>
+                  <li>Next.js</li>
+                  <li>React</li>
+                  <li>Redux Toolkit</li>
+                  <li>WordPress</li>
+                  <li>PHP</li>
+                  <li>GraphQL</li>
+                  <li>MySQL</li>
+                </ul>
+              </div>
+
+              <div class="work-project__footer">
+                <div class="work-project__role">
+                  <h4 class="work-project__label">ROLE</h4>
+                  <p>Full-stack developer</p>
+                </div>
+
+                <a class="work-project__link" href="https://www.channelchek.com/" target="_blank" rel="noopener noreferrer">
+                  View project
+
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
             </div>
           </div>
-        
+
         </article>
 
       </div>
-  
+
     </div>
   </section>
-  
-  <section class="section">
+
+  <section class="section section--magnet" id="archive">
     <div class="page-shell page-shell--fluid">
       <header class="row row--between-center">
         <div class="section-label">
@@ -380,7 +545,7 @@
           <div class="line"></div>
           <span>SELECTED ARCHIVE</span>
         </div>
-      
+
         <aside class="keywords keywords--light" aria-label="Tagline">
           <div class="keywords-inner">
             <div class="keywords-text">
@@ -396,45 +561,231 @@
       <table class="archive-table">
         <thead>
           <tr>
-            <th>YEAR</th>
-            <th>PROJECT</th>
+            <th>YEARS</th>
+            <th>COMPANY</th>
             <th>ROLE</th>
             <th>FOCUS</th>
           </tr>
         </thead>
-      
+
         <tbody>
           <tr>
-            <td>2024</td>
-            <td>E-Commerce Platform</td>
-            <td>Full-Stack Engineer</td>
-            <td>Scalability</td>
-          </tr>
-      
-          <tr>
-            <td>2024</td>
-            <td>CRM System</td>
+            <td>2024-2026</td>
+            <td><a href="https://youhelp.ru/" target="_blank" rel="noopener noreferrer">YouHelp</a></td>
             <td>Full-Stack Engineer</td>
             <td>Architecture</td>
           </tr>
-      
+
           <tr>
-            <td>2023</td>
-            <td>Design System</td>
+            <td>2023-2024</td>
+            <td>Kvant PRO</td>
             <td>Frontend Engineer</td>
-            <td>Developer Experience</td>
-          </tr>
-      
-          <tr>
-            <td>2023</td>
-            <td>Internal Tools</td>
-            <td>Full-Stack Engineer</td>
             <td>Productivity</td>
+          </tr>
+
+          <tr>
+            <td>2022-2023</td>
+            <td>QuietWheels</td>
+            <td>Full-Stack Engineer</td>
+            <td>Scalability</td>
+          </tr>
+
+          <tr>
+            <td>2019-2021</td>
+            <td><a href="https://ecuras.com/" target="_blank" rel="noopener noreferrer">eCuras LLC</a></td>
+            <td>Full-Stack Engineer</td>
+            <td>Developer Experience</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
+
+  <!-- Paste after the "Selected archive" section, before <script src="/assets/main.js"> -->
+    <section class="section" id="about">
+      <div class="page-shell page-shell--fluid">
+
+        <!-- Header -->
+        <header class="row row--between-center">
+          <div class="section-label">
+            <span class="section-label__number">(05)</span>
+            <div class="line"></div>
+            <span>ABOUT ME</span>
+          </div>
+
+          <aside class="keywords keywords--light" aria-label="Tagline">
+            <div class="keywords-inner">
+              <div class="keywords-text">
+                <span>BACKGROUND</span>
+                <span>APPROACH</span>
+                <span>NOW</span>
+              </div>
+            </div>
+          </aside>
+        </header>
+
+        <div class="section-hero">
+          <h2 class="h2">About</h2>
+          <div class="section-hero__content">
+            <p>Who I am, how I work and what I'm learning right now.</p>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="about-grid">
+
+          <figure class="about__photo">
+            <img src="/assets/photo1.jpg" alt="Pavel Khatkevich sitting on volcanic rock in a cave" loading="lazy">
+          </figure>
+
+          <div class="about__content">
+
+            <p class="h3 about__lead">I build systems that stay simple as they grow.</p>
+
+            <div class="about__columns">
+              <article class="about__column">
+                <div class="card-label"><span>WHO I AM</span></div>
+                <p class="about__text">
+                    TypeScript fullstack developer with 7 years of experience building marketplaces and data-heavy platforms. I work across frontend, backend and infrastructure. At YouHelp I moved a legacy backend toward DDD and Clean Architecture with NestJS and PostgreSQL, and cut developer environment setup from days to minutes with Docker Dev Containers. At Channelchek I built the platform from scratch.
+                </p>
+              </article>
+
+              <article class="about__column">
+                <div class="card-label"><span>HOW I WORK</span></div>
+                <p class="about__text">
+                    I define boundaries first and keep features independent, using Feature-Sliced Design on the frontend and DDD on the backend. I use AI to move faster, but every change gets my review before it ships.
+                </p>
+              </article>
+            </div>
+
+            <div class="about__now">
+              <div class="card-label"><span>CURRENTLY LEARNING</span></div>
+              <p class="about__now-text">Agentic workflows: MCP, ACP and custom Skills.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Facts -->
+        <dl class="about-facts">
+          <div class="about-fact">
+            <dt>EXPERIENCE</dt>
+            <dd>7 years</dd>
+          </div>
+          <div class="about-fact">
+            <dt>FOCUS</dt>
+            <dd>Architecture and fullstack</dd>
+          </div>
+          <div class="about-fact">
+            <dt>LANGUAGES</dt>
+            <dd>Russian<br>English, B1</dd>
+          </div>
+          <div class="about-fact">
+            <dt>AVAILABILITY</dt>
+            <dd>Open to new projects</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+    <!-- Paste after the About section, before <script src="/assets/main.js"> -->
+      <footer class="site-footer" id="contact">
+        <div class="page-shell page-shell--fluid">
+
+          <!-- Header -->
+          <header class="row row--between-center">
+            <div class="section-label">
+              <span class="section-label__number">(06)</span>
+              <div class="line"></div>
+              <span>CONTACT</span>
+            </div>
+
+            <aside class="keywords keywords--light" aria-label="Tagline">
+              <div class="keywords-inner">
+                <div class="keywords-text">
+                  <span>IDEAS</span>
+                  <span>INTO</span>
+                  <span>REALITY</span>
+                </div>
+              </div>
+            </aside>
+          </header>
+
+          <div class="section-hero">
+            <h2 class="h2">Let's talk</h2>
+            <div class="section-hero__content">
+              <p>Have a project or an idea? Send me a message and I'll get back to you.</p>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="contact-grid">
+
+            <div class="contact__main">
+              <div class="hero__availability">
+                <span class="hero__status">
+                  <span class="hero__status-ping"></span>
+                  <span class="hero__status-dot"></span>
+                </span>
+                <span class="hero__availability-text">Available for new projects</span>
+              </div>
+
+              <a class="contact__email" href="mailto:pkhatkevich@gmail.com">pkhatkevich@gmail.com</a>
+            </div>
+
+            <ul class="contact__links">
+              <li>
+                <a href="https://linkedin.com/in/pavel-khatkevich-298895319/" target="_blank" rel="noopener noreferrer">
+                  <span>LinkedIn</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/GitHub-Pavel/" target="_blank" rel="noopener noreferrer">
+                  <span>GitHub</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://t.me/pac1f1c_0cean/" target="_blank" rel="noopener noreferrer">
+                  <span>Telegram</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:pkhatkevich@gmail.com">
+                  <span>Email</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="footer-bar">
+            <span>© 2026 PAVEL KHATKEVICH</span>
+            <a href="#hero" class="footer-bar__top">
+              BACK TO TOP
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </footer>
 
   <script src="/assets/main.js" defer></script>
 </body>

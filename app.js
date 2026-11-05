@@ -10,9 +10,14 @@ fastify.register(require('@fastify/static'), {
   prefix: '/assets',
 });
 
+const html = fs.readFileSync('index.html', 'utf8');
 
-fastify.get('*', function (request, reply) {
-    reply.type('text/html').send(fs.readFileSync('index.html', 'utf8'));
+fastify.get('*', async (request, reply) => {
+  reply.header(
+      'Link',
+      '</assets/cyrillic.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </assets/latin.woff2>; rel=preload; as=font; type=font/woff2; crossorigin, </assets/fonts.css>; rel=preload; as=style'
+    );
+  reply.type('text/html').send(html);
 })
 
 fastify.listen({ port: 3000 }, function (err, address) {
