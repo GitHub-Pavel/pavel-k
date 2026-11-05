@@ -907,6 +907,8 @@ const boot = () => {
 // Start as soon as the hero photo is ready, not when EVERY image on the page
 // (including the huge work screenshots) has finished downloading.
 const heroPhotoEl = document.querySelector('.main-photo');
+// keep the real photo hidden until the particle intro reveals it
+if (heroPhotoEl) heroPhotoEl.style.opacity = '0';
 if (!heroPhotoEl || heroPhotoEl.complete) {
   boot();
 } else {

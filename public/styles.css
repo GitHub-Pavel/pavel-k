@@ -1655,9 +1655,9 @@ hr {
   opacity: 0;
 }
 
+/* Stays hidden until the JS intro (animateHeroPhoto) fades it in. */
 .main-photo {
     opacity: 0;
-    transition: opacity 0.05s;
     position: absolute;
     top: 50%;
     right: calc(100% + 5rem);
@@ -1665,10 +1665,6 @@ hr {
     transform: translateY(-50%);
     width: 380px;
     max-width: none;
-}
-
-.loaded .main-photo {
-    opacity: 1;
 }
 
 .hero-keywords {
