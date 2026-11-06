@@ -2184,3 +2184,50 @@ hr {
     font-size: clamp(1.125rem, 6vw, 2rem);
   }
 }
+
+
+/* ========================================
+   LANGUAGE SWITCH (header): ru | en
+======================================== */
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+.lang-switch__link {
+  padding: 0.25rem 0;
+  font-weight: 400;
+  color: var(--charcoal-450);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.lang-switch__link:hover {
+  color: var(--charcoal-900);
+}
+
+.lang-switch__link--active {
+  font-weight: 600;
+  color: var(--charcoal-900);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: 1.5px;
+}
+
+.lang-switch__sep {
+  color: var(--charcoal-200);
+}
+
+@media (max-width: 900px) {
+  .lang-switch {
+    position: relative;
+    z-index: 2;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+}

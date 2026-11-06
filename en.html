@@ -15,6 +15,11 @@
   <meta property="og:title" content="Pavel Khatkevich — TypeScript Fullstack Developer">
   <meta property="og:description" content="Building scalable web applications with modern cloud technologies.">
 
+  <!-- Language alternates -->
+  <link rel="alternate" hreflang="en" href="/en">
+  <link rel="alternate" hreflang="ru" href="/ru">
+  <link rel="alternate" hreflang="x-default" href="/en">
+
   <link rel="preload" href="/assets/cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/fonts.css">
@@ -34,6 +39,12 @@
         <a href="#about" class="site-header__nav-link">About me</a>
         <a href="#contact" class="site-header__nav-link">Contact</a>
       </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/ru" class="lang-switch__link">ru</a>
+        <span class="lang-switch__sep">|</span>
+        <a href="/en" class="lang-switch__link lang-switch__link--active" aria-current="true">en</a>
+      </div>
 
       <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
         <span></span>

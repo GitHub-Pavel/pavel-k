@@ -955,3 +955,11 @@ window.addEventListener("scroll", () => {
     if (e.matches) setOpen(false);
   });
 })();
+
+(function () {
+  var select = document.getElementById('lang-select');
+  if (!select) return;
+  select.addEventListener('change', function () {
+    window.location.href = '/' + select.value + window.location.hash;
+  });
+})();

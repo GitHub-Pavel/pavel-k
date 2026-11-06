@@ -1,0 +1,794 @@
+<!--<!DOCTYPE html>-->
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Павел Хаткевич — TypeScript Fullstack-разработчик</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Павел Хаткевич — TypeScript Fullstack-разработчик, создающий масштабируемые веб-приложения на современных облачных технологиях.">
+  <meta name="keywords" content="Павел Хаткевич, TypeScript, Fullstack-разработчик, портфолио, масштабируемые веб-приложения, современные облачные технологии">
+  <meta name="author" content="Павел Хаткевич">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Павел Хаткевич — TypeScript Fullstack-разработчик">
+  <meta property="og:description" content="Создаю масштабируемые веб-приложения на современных облачных технологиях.">
+
+  <link rel="preload" href="/assets/cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/fonts.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="bg-grain">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="page-shell page-shell--fluid site-header__block">
+      <a href="#hero" class="site-header__logo">PK</a>
+
+      <nav class="site-header__nav" id="site-nav" aria-label="Главное меню">
+        <a href="#skills" class="site-header__nav-link">Навыки</a>
+        <a href="#work" class="site-header__nav-link">Работы</a>
+        <a href="#archive" class="site-header__nav-link">Архив</a>
+        <a href="#about" class="site-header__nav-link">Обо мне</a>
+        <a href="#contact" class="site-header__nav-link">Контакты</a>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language">
+        <a href="/ru" class="lang-switch__link lang-switch__link--active">ru</a>
+        <span class="lang-switch__sep">|</span>
+        <a href="/en" class="lang-switch__link" aria-current="true">en</a>
+      </div>
+
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Hero Area -->
+  <section class="hero" id="hero">
+    <div class="hero__grid page-shell page-shell--fluid">
+
+      <div class="hero__content">
+
+        <div class="hero__profile">
+          <div class="hero__availability">
+            <span class="hero__status">
+              <span class="hero__status-ping"></span>
+              <span class="hero__status-dot"></span>
+            </span>
+            <span class="hero__availability-text">Открыт к новым проектам</span>
+          </div>
+        </div>
+
+        <div class="hero__name-block">
+          <h1 class="hero__title">
+            Павел<br>Хаткевич
+          </h1>
+
+          <div class="hero__role-wrap">
+            <span class="hero__role">TypeScript Fullstack-разработчик</span>
+          </div>
+        </div>
+
+        <div class="hero__description-block">
+          <div class="hero__rule"></div>
+          <p class="hero__description">
+            Создаю масштабируемые веб-приложения<br/> на TypeScript и современных облачных технологиях.
+          </p>
+        </div>
+
+        <div class="hero__cta-block">
+          <a href="#work" class="hero__cta">
+            Смотреть работы
+            <svg class="hero__cta-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+
+      <aside class="keywords hero-keywords" aria-label="Слоган">
+        <div class="keywords-inner">
+          <span class="keywords-number">(01)</span>
+          <div class="keywords-text">
+            <span>ИДЕИ</span>
+            <span>В</span>
+            <span>РЕАЛЬНОСТЬ</span>
+          </div>
+          <div class="keywords__line keywords__line--down"></div>
+        </div>
+        <img src="/assets/2.png" class="main-photo" alt="Павел Хаткевич">
+      </aside>
+
+    </div>
+
+    <footer class="hero-footer page-shell page-shell--fluid">
+      <div class="hero-footer__social">
+        <a href="https://www.linkedin.com/in/pavel-khatkevich-298895319/" target="_blank" rel="noopener noreferrer"
+          class="hero-footer__social-link">LINKEDIN</a>
+        <a href="https://github.com/GitHub-Pavel/" target="_blank" rel="noopener noreferrer" class="hero-footer__social-link">GITHUB</a>
+        <a href="https://t.me/pac1f1c_0cean/" target="_blank" rel="noopener noreferrer" class="hero-footer__social-link">TELEGRAM</a>
+        <a href="mailto:pkhatkevich@gmail.com" class="hero-footer__social-link">EMAIL</a>
+      </div>
+
+      <a href="#skills" class="hero-footer__scroll">
+        ВНИЗ
+        <svg class="hero-footer__scroll-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </footer>
+
+    <canvas class="hero-bg"></canvas>
+  </section>
+
+  <section class="section section--long" id="skills">
+    <div class="page-shell page-shell--fluid">
+
+      <!-- Header -->
+      <header class="row row--between-center">
+        <div class="section-label">
+          <span class="section-label__number">(02)</span>
+          <div class="line"></div>
+          <span>ЭКСПЕРТИЗА</span>
+        </div>
+
+        <aside class="keywords keywords--light" aria-label="Слоган">
+          <div class="keywords-inner">
+            <div class="keywords-text">
+              <span>ИНСТРУМЕНТЫ</span>
+              <span>ИДЕИ</span>
+              <span>ЛУЧШИЕ ПРОДУКТЫ</span>
+            </div>
+          </div>
+        </aside>
+      </header>
+
+      <div class="section-hero">
+        <h2 class="h2">Навыки</h2>
+        <div class="section-hero__content">
+          <p>
+            Технологии, с которыми я создаю современные,
+            масштабируемые и поддерживаемые приложения.
+          </p>
+        </div>
+      </div>
+
+      <!-- Skills: row 1 -->
+      <div class="skills-grid">
+
+        <article class="skill-card">
+          <div class="card-label">
+            <span>01</span>
+            <div class="line"></div>
+            <span>FRONTEND</span>
+          </div>
+
+          <ul>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Next.js</li>
+          </ul>
+
+          <ul class="skill-card__also">
+            <li>FSD</li>
+            <li>RTK</li>
+            <li>Vite</li>
+            <li>Webpack</li>
+            <li>Rollup</li>
+            <li>Zod</li>
+            <li>TanStack</li>
+            <li>React Query</li>
+            <li>Jotai</li>
+            <li>React Hooks</li>
+            <li>React Native</li>
+          </ul>
+        </article>
+
+        <article class="skill-card bordered">
+          <div class="card-label">
+            <span>02</span>
+            <div class="line"></div>
+            <span>BACKEND</span>
+          </div>
+
+          <ul>
+            <li>Node.js</li>
+            <li>NestJS</li>
+          </ul>
+
+          <ul class="skill-card__also">
+            <li>REST</li>
+            <li>GraphQL</li>
+            <li>Микросервисы</li>
+            <li>Docker</li>
+            <li>CI/CD</li>
+            <li>Git</li>
+            <li>Github Actions</li>
+            <li>CQRS</li>
+            <li>express</li>
+            <li>fastify</li>
+            <li>DDD</li>
+            <li>Event Storming</li>
+            <li>WordPress</li>
+            <li>PHP</li>
+            <li>DI</li>
+            <li>KISS</li>
+            <li>DRY</li>
+            <li>SOLID</li>
+          </ul>
+        </article>
+
+        <article class="skill-card bordered">
+          <div class="card-label">
+            <span>03</span>
+            <div class="line"></div>
+            <span>БАЗЫ ДАННЫХ</span>
+          </div>
+
+          <ul>
+            <li>PostgreSQL</li>
+            <li>Redis</li>
+            <li>TypeORM</li>
+          </ul>
+
+          <ul class="skill-card__also">
+            <li>MySQL</li>
+            <li>PrismaORM</li>
+            <li>ACID-транзакции</li>
+            <li>Паттерн Repository</li>
+          </ul>
+        </article>
+
+      </div>
+
+      <hr>
+
+      <!-- Skills: row 2 -->
+      <div class="skills-grid skills-grid--3to2">
+
+        <article class="skill-card">
+          <div class="card-label">
+            <span>04</span>
+            <div class="line"></div>
+            <span>АРХИТЕКТУРА</span>
+          </div>
+
+          <ul>
+            <li>Feature-Sliced Design</li>
+            <li>Domain-Driven Design</li>
+            <li>Clean Architecture</li>
+          </ul>
+
+          <p class="skill-card__text">
+            Чёткие границы и долгосрочная поддерживаемость,
+            чтобы продукты росли вместе с бизнесом.
+          </p>
+        </article>
+
+        <article class="skill-card bordered">
+          <div class="card-label">
+            <span>05</span>
+            <div class="line"></div>
+            <span>AI-ИНЖЕНЕР</span>
+          </div>
+
+          <ul>
+            <li>Claude Code</li>
+            <li>Cursor</li>
+            <li>Skills</li>
+          </ul>
+
+          <ul class="skill-card__also">
+            <li>Zed</li>
+            <li>ACP</li>
+            <li>MCP</li>
+            <li>RAG</li>
+            <li>Codex</li>
+          </ul>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section" id="work">
+    <div class="page-shell page-shell--fluid">
+
+      <!-- Header -->
+      <header class="row row--between-center">
+        <div class="section-label">
+          <span class="section-label__number">(03)</span>
+          <div class="line"></div>
+          <span>ИЗБРАННЫЕ РАБОТЫ</span>
+        </div>
+
+        <aside class="keywords keywords--light" aria-label="Слоган">
+          <div class="keywords-inner">
+            <div class="keywords-text">
+              <span>ПРОДУКТЫ</span>
+              <span>РЕШЕНИЯ</span>
+              <span>РЕАЛЬНЫЙ ЭФФЕКТ</span>
+            </div>
+          </div>
+        </aside>
+      </header>
+
+      <div class="section-hero">
+        <h2 class="h2">Портфолио</h2>
+        <div class="section-hero__content">
+          <p>
+            Избранные продукты с упором на масштабируемость, производительность и пользовательский опыт.
+          </p>
+        </div>
+      </div>
+
+      <div class="works-grid">
+
+        <article class="work-project">
+
+          <div class="work-project__content">
+            <!-- Project introduction -->
+            <div class="work-project__intro">
+
+              <div class="work-project__overview">
+                <div class="card-label work-project__card-label">
+                  <span>01</span>
+                  <div class="line"></div>
+                  <span>МАРКЕТПЛЕЙС</span>
+                </div>
+
+                <h3 class="work-project__title">YouHelp</h3>
+
+                <p class="work-project__description">
+                  Онлайн-платформа, которая объединяет семьи с проверенными нянями, бебиситтерами, сиделками, репетиторами и другими
+                  домашними специалистами. Пользователи могут просматривать профили специалистов, читать отзывы, публиковать
+                  объявления и напрямую общаться с кандидатами. Сервис помогает находить надёжную помощь для повседневных
+                  семейных задач проще и безопаснее.
+                </p>
+
+                <div class="article work-project__article" data-slug="youhelp">
+                  <h4>Мой вклад</h4>
+                  <p>Как Full-Stack разработчик я работал над архитектурой бэкенда, фронтендом и инфраструктурой, уделяя основное
+                    внимание ключевой функциональности маркетплейса и поддерживаемости кодовой базы.</p>
+                  <p>Я участвовал в миграции легаси-бэкенда на DDD и Clean Architecture с использованием NestJS, TypeORM и
+                    PostgreSQL.
+                    Улучшив разделение доменов и изолировав слой хранения данных с помощью паттерна Repository, я помог снизить
+                    связанность
+                    и обеспечить надёжные транзакционные процессы.
+                    <button class="article-more" data-slug="youhelp">Читать далее</button>
+                  </p>
+                  <div class="article__hidden">
+                    <p>Я разработал ключевые функции управления заказами: создание заказов, подбор исполнителей, чаты, а также
+                      конечный автомат (state machine), обеспечивающий соблюдение бизнес-правил и допустимые переходы между
+                      статусами заказа. Кроме того, я интегрировал платёжный шлюз для безопасных транзакций.</p>
+                    <p>На фронтенде я внедрил Feature-Sliced Design (FSD) и выстроил глобальное управление состоянием на Redux
+                      Toolkit, что улучшило организацию кода и переиспользование компонентов в кабинетах родителей и нянь.
+                      Переход на Vite ускорил локальную разработку и Hot Module Replacement.</p>
+                    <p>Помимо разработки приложения, я создал микросервис метрик для агрегации технических и продуктовых данных,
+                      настроил пайплайны GitHub Actions для автоматического тестирования и деплоя и внедрил Docker Dev Containers,
+                      сократив настройку окружения разработчика с нескольких дней до минут.</p>
+                    <p>Эти изменения помогли модернизировать легаси-системы, повысить надёжность процессов работы с заказами и
+                      сформировать более поддерживаемую кодовую базу, ускорив при этом выпуск новых функций.</p>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="work-project__contribution">
+                <div class="work-project__image-background">
+                  <div class="work-project__image-box">
+                    <img src="/assets/screencapture-youhelp.png" alt="Павел Хаткевич" class="work-project__image">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <hr />
+
+            <!-- Project metadata -->
+            <div class="work-project__details">
+
+              <div class="work-project__technologies">
+                <h4 class="work-project__label">ТЕХНОЛОГИИ</h4>
+
+                <ul class="work-project__technology-list">
+                    <li>React</li>
+                    <li>Vite</li>
+                    <li>Webpack</li>
+                      <li>Rollup</li>
+                      <li>TypeScript</li>
+                      <li>RTK</li>
+                      <li>FSD</li>
+                      <li>Node.js</li>
+                      <li>NestJS</li>
+                      <li>DDD</li>
+                      <li>PostgreSQL</li>
+                      <li>TypeORM</li>
+                      <li>ACID-транзакции</li>
+                      <li>GitHub</li>
+                      <li>Docker</li>
+                      <li>Микросервисы</li>
+                </ul>
+              </div>
+
+              <div class="work-project__footer">
+                <div class="work-project__role">
+                  <h4 class="work-project__label">РОЛЬ</h4>
+                  <p>Full-stack разработчик</p>
+                </div>
+
+                <a class="work-project__link" href="https://youhelp.ru/" target="_blank" rel="noopener noreferrer">
+                  Смотреть проект
+
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </article>
+
+        <article class="work-project work-project--reverse">
+
+          <div class="work-project__content">
+            <!-- Project introduction -->
+            <div class="work-project__intro">
+
+              <div class="work-project__contribution">
+                <div class="work-project__image-background">
+                  <div class="work-project__image-box">
+                    <img src="/assets/channekchek.png" alt="Павел Хаткевич" class="work-project__image">
+                  </div>
+                </div>
+              </div>
+
+              <div class="work-project__overview">
+                <div class="card-label work-project__card-label">
+                  <span>02</span>
+                  <div class="line"></div>
+                  <span>ПЛАТФОРМА ФИНАНСОВОЙ АНАЛИТИКИ</span>
+                </div>
+
+                <h3 class="work-project__title">Channelchek</h3>
+
+                <p class="work-project__description">
+                    Инвестиционная исследовательская платформа, ориентированная на компании малой и микрокапитализации. Она
+                    предоставляет инвесторам аналитику по акциям, финансовые данные, рыночные новости, профили компаний и
+                    интервью с руководителями, помогая оценивать растущие компании и находить инвестиционные возможности.
+                </p>
+
+                <div class="article work-project__article" data-slug="youhelp-2">
+                  <h4>Мой вклад</h4>
+                  <p>
+                      Как Full-Stack разработчик я создал Channelchek с нуля, отвечая за реализацию платформы на уровне фронтенда, бэкенда и данных.
+                  </p>
+                  <p>
+                    В мои задачи входили настройка приложения на Next.js, разработка переиспользуемых React-компонентов и страниц на TypeScript, а также реализация глобального управления состоянием на Redux Toolkit. Я выстроил интеграцию фронтенда с CMS WordPress, разработал GraphQL-запросы для получения контента и реализовал серверную функциональность на PHP. Также я работал с MySQL для хранения и получения данных.
+                    <button class="article-more" data-slug="youhelp-2">Читать далее</button>
+                  </p>
+                  <div class="article__hidden">
+                      <p>Я отвечал за объединение этих технологий в единое приложение, реализацию потоков данных между фронтендом и бэкендом и обеспечение доставки контента, управляемого через WordPress, до пользовательской части платформы. Я заложил базовую структуру кода проекта и организовал логику приложения так, чтобы упростить поддержку и дальнейшее развитие.</p>
+                      <p>От первоначальной настройки до интеграции основных компонентов приложения я реализовал техническую основу платформы и выпустил рабочий сайт финансовой аналитики, представляющий профили компаний, инвестиционные исследования и рыночный контент.</p>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+            </div>
+
+            <hr />
+
+            <!-- Project metadata -->
+            <div class="work-project__details">
+
+              <div class="work-project__technologies">
+                <h4 class="work-project__label">ТЕХНОЛОГИИ</h4>
+
+                <ul class="work-project__technology-list">
+                  <li>TypeScript</li>
+                  <li>Next.js</li>
+                  <li>React</li>
+                  <li>Redux Toolkit</li>
+                  <li>WordPress</li>
+                  <li>PHP</li>
+                  <li>GraphQL</li>
+                  <li>MySQL</li>
+                </ul>
+              </div>
+
+              <div class="work-project__footer">
+                <div class="work-project__role">
+                  <h4 class="work-project__label">РОЛЬ</h4>
+                  <p>Full-stack разработчик</p>
+                </div>
+
+                <a class="work-project__link" href="https://www.channelchek.com/" target="_blank" rel="noopener noreferrer">
+                  Смотреть проект
+
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--magnet" id="archive">
+    <div class="page-shell page-shell--fluid">
+      <header class="row row--between-center">
+        <div class="section-label">
+          <span class="section-label__number">(04)</span>
+          <div class="line"></div>
+          <span>ИЗБРАННЫЙ АРХИВ</span>
+        </div>
+
+        <aside class="keywords keywords--light" aria-label="Слоган">
+          <div class="keywords-inner">
+            <div class="keywords-text">
+              <span>ЕЩЁ</span>
+              <span>ОПЫТ</span>
+            </div>
+          </div>
+        </aside>
+      </header>
+    </div>
+
+    <div class="page-shell">
+      <table class="archive-table">
+        <thead>
+          <tr>
+            <th>ГОДЫ</th>
+            <th>КОМПАНИЯ</th>
+            <th>РОЛЬ</th>
+            <th>ФОКУС</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>2024-2026</td>
+            <td><a href="https://youhelp.ru/" target="_blank" rel="noopener noreferrer">YouHelp</a></td>
+            <td>Full-Stack инженер</td>
+            <td>Архитектура</td>
+          </tr>
+
+          <tr>
+            <td>2023-2024</td>
+            <td>Kvant PRO</td>
+            <td>Frontend-инженер</td>
+            <td>Продуктивность</td>
+          </tr>
+
+          <tr>
+            <td>2022-2023</td>
+            <td>QuietWheels</td>
+            <td>Full-Stack инженер</td>
+            <td>Масштабируемость</td>
+          </tr>
+
+          <tr>
+            <td>2019-2021</td>
+            <td><a href="https://ecuras.com/" target="_blank" rel="noopener noreferrer">eCuras LLC</a></td>
+            <td>Full-Stack инженер</td>
+            <td>Developer Experience</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Paste after the "Selected archive" section, before <script src="/assets/main.js"> -->
+    <section class="section" id="about">
+      <div class="page-shell page-shell--fluid">
+
+        <!-- Header -->
+        <header class="row row--between-center">
+          <div class="section-label">
+            <span class="section-label__number">(05)</span>
+            <div class="line"></div>
+            <span>ОБО МНЕ</span>
+          </div>
+
+          <aside class="keywords keywords--light" aria-label="Слоган">
+            <div class="keywords-inner">
+              <div class="keywords-text">
+                <span>ОПЫТ</span>
+                <span>ПОДХОД</span>
+                <span>СЕЙЧАС</span>
+              </div>
+            </div>
+          </aside>
+        </header>
+
+        <div class="section-hero">
+          <h2 class="h2">Обо мне</h2>
+          <div class="section-hero__content">
+            <p>Кто я, как работаю и что изучаю прямо сейчас.</p>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="about-grid">
+
+          <figure class="about__photo">
+            <img src="/assets/photo1.jpg" alt="Павел Хаткевич сидит на вулканической породе в пещере" loading="lazy">
+          </figure>
+
+          <div class="about__content">
+
+            <p class="h3 about__lead">Я строю системы, которые остаются простыми по мере роста.</p>
+
+            <div class="about__columns">
+              <article class="about__column">
+                <div class="card-label"><span>КТО Я</span></div>
+                <p class="about__text">
+                    TypeScript fullstack-разработчик с 7-летним опытом создания маркетплейсов и платформ с большими объёмами данных. Работаю на всех уровнях: фронтенд, бэкенд и инфраструктура. В YouHelp я перевёл легаси-бэкенд на DDD и Clean Architecture с помощью NestJS и PostgreSQL и сократил настройку окружения разработчика с нескольких дней до минут с помощью Docker Dev Containers. В Channelchek я построил платформу с нуля.
+                </p>
+              </article>
+
+              <article class="about__column">
+                <div class="card-label"><span>КАК Я РАБОТАЮ</span></div>
+                <p class="about__text">
+                    Сначала определяю границы и сохраняю независимость фич: использую Feature-Sliced Design на фронтенде и DDD на бэкенде. Я применяю AI, чтобы работать быстрее, но каждое изменение проходит моё ревью перед релизом.
+                </p>
+              </article>
+            </div>
+
+            <div class="about__now">
+              <div class="card-label"><span>СЕЙЧАС ИЗУЧАЮ</span></div>
+              <p class="about__now-text">Агентные воркфлоу: MCP, ACP и кастомные Skills.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <hr>
+
+        <!-- Facts -->
+        <dl class="about-facts">
+          <div class="about-fact">
+            <dt>ОПЫТ</dt>
+            <dd>7 лет</dd>
+          </div>
+          <div class="about-fact">
+            <dt>ФОКУС</dt>
+            <dd>Архитектура и fullstack</dd>
+          </div>
+          <div class="about-fact">
+            <dt>ЯЗЫКИ</dt>
+            <dd>Русский<br>Английский, B1</dd>
+          </div>
+          <div class="about-fact">
+            <dt>ДОСТУПНОСТЬ</dt>
+            <dd>Открыт к новым проектам</dd>
+          </div>
+        </dl>
+
+      </div>
+    </section>
+
+    <!-- Paste after the About section, before <script src="/assets/main.js"> -->
+      <footer class="site-footer" id="contact">
+        <div class="page-shell page-shell--fluid">
+
+          <!-- Header -->
+          <header class="row row--between-center">
+            <div class="section-label">
+              <span class="section-label__number">(06)</span>
+              <div class="line"></div>
+              <span>КОНТАКТЫ</span>
+            </div>
+
+            <aside class="keywords keywords--light" aria-label="Слоган">
+              <div class="keywords-inner">
+                <div class="keywords-text">
+                  <span>ИДЕИ</span>
+                  <span>В</span>
+                  <span>РЕАЛЬНОСТЬ</span>
+                </div>
+              </div>
+            </aside>
+          </header>
+
+          <div class="section-hero">
+            <h2 class="h2">Поговорим?</h2>
+            <div class="section-hero__content">
+              <p>Есть проект или идея? Напишите мне, и я отвечу.</p>
+            </div>
+          </div>
+
+          <!-- Body -->
+          <div class="contact-grid">
+
+            <div class="contact__main">
+              <div class="hero__availability">
+                <span class="hero__status">
+                  <span class="hero__status-ping"></span>
+                  <span class="hero__status-dot"></span>
+                </span>
+                <span class="hero__availability-text">Открыт к новым проектам</span>
+              </div>
+
+              <a class="contact__email" href="mailto:pkhatkevich@gmail.com">pkhatkevich@gmail.com</a>
+            </div>
+
+            <ul class="contact__links">
+              <li>
+                <a href="https://linkedin.com/in/pavel-khatkevich-298895319/" target="_blank" rel="noopener noreferrer">
+                  <span>LinkedIn</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/GitHub-Pavel/" target="_blank" rel="noopener noreferrer">
+                  <span>GitHub</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://t.me/pac1f1c_0cean/" target="_blank" rel="noopener noreferrer">
+                  <span>Telegram</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:pkhatkevich@gmail.com">
+                  <span>Email</span>
+                  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="footer-bar">
+            <span>© 2026 ПАВЕЛ ХАТКЕВИЧ</span>
+            <a href="#hero" class="footer-bar__top">
+              НАВЕРХ
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </footer>
+
+  <script src="/assets/main.js" defer></script>
+</body>
+</html>
